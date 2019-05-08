@@ -37,6 +37,7 @@
     float: left;
     height: 91px;
     width: 360px;
+    position: relative;
 }
 .head .nav .div3 .text{
     height: 30px;
@@ -48,4 +49,11 @@
 .head .nav .div3 .czzzx{
     border-radius: 20px;
     border: 1px solid #515151;
+    width: 90px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    position: absolute;
+    left: 300px;
+    top: 30px;
 }
