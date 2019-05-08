@@ -1,0 +1,22 @@
+{
+    "data": [{
+        "id": 493551161,
+        "url": "http://m10.music.126.net/20190508132736/bab7be2cc71a3744998c53c769866dfc/ymusic/a922/c905/49dd/2c4fbfe278dd60608d6598183e7bea2d.mp3",
+        "br": 128000,
+        "size": 3095031,
+        "md5": "2c4fbfe278dd60608d6598183e7bea2d",
+        "code": 200,
+        "expi": 1200,
+        "type": "mp3",
+        "gain": -2.85,
+        "fee": 8,
+        "uf": null,
+        "payed": 0,
+        "flag": 0,
+        "canExtend": false,
+        "freeTrialInfo": null,
+        "level": "standard",
+        "encodeType": "mp3"
+    }],
+    "code": 200
+}
