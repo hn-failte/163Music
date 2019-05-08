@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../lib/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        li{
+            background: #ccc;
+            margin: 2px;
+            list-style: none;
+        }
+        li:hover{
+            cursor: pointer;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <input id="input" type="text">
+    <input id="search" type="button" value="search">
+    <ul id="list"></ul>
+    <audio id="audio" src="" controls="controls"></audio>
+</body>
+<script>
+    var li = "";
+    $("#search").click(function(){
+        li = "";
+        $.ajax({
+            url: "http://10.36.133.110:3000/search",
+            type: "get",
+            dataType: "json",
+            data: "keywords="+$("#input").val(),
+            success: function(res){
+                var songs = res.result.songs;
+                for(let i=0;i<songs.length;i++){
+                    let item = songs[i];
+                    li+=`<li onclick="play(this)">
+                            <span>${item['id']}</span>
+                            <span>${item['name']}</span>
+                            <span>${item['artists'][0]['name']}</span>
+                        </li>`;
+                }
+                $("#list").html(li);
+            }
+        })
+    })
+
+    function play(el){
+        $.ajax({
+            url: "http://10.36.133.110:3000/song/url",
+            data: "id="+$(el).children().eq(0).text(),
+            type: "get",
+            dataType: "json",
+            success: function(res){
+                let obj = res.data;
+                $("audio").attr("src", obj[0].url).prop("autoplay", true)
+            }
+        })
+    }
+</script>
+</html>
