@@ -1,0 +1,52 @@
+#plane{
+    position:relative;
+}
+.log-nav{
+    margin:0 auto;
+    width:800px;
+    height:260px;
+    background: #fff url("../img/mymusic.png") no-repeat center top;
+    overflow:hidden;
+    position:relative;
+}
+.log-button{
+    width:168px;
+    height:45px;
+    position:absolute;
+    margin-top:202px;
+    margin-left:478px;
+    background-color:transparent;
+}
+.popover{
+    width:530px;
+    height:325px;
+    background:yellow;
+    position: fixed;
+    top:157px;
+    left:142px;
+}
+.popover-head{
+    width:530px;
+    height:40px;
+    margin-top:0px;
+    background:#555555;
+}
+.popover-head-login{
+    width: 100px;
+    height:40px;
+    margin-left:50px;
+    float:left;
+    font-size:16px;
+    color:#fff;
+    line-height: 40px;
+}
+.popover-head-button{
+    width: 20px;
+    height:20px;
+    margin-left:320px;
+    margin-top:10px;
+    float:left;
+/*     font-size:16px;
+    color:#fff; */
+    /* line-height: 40px; */
+}
