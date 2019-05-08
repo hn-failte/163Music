@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="../css/frame.css" rel="stylesheet" />
+    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 </head>
 <body>
     <div class="head">
@@ -30,8 +33,41 @@
                 <div class="czzzx">
                     创作者中心
                 </div>
+                <img src="../img/images/a_09.jpg" />
+
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      登录
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li class="li1"><a href="#">手机号登录</a></li>
+                      <li class="li2"><a href="#">微信登录</a></li>
+                      <li class="li3"><a href="#">QQ登录</a></li>
+                      <li class="li4"><a href="#">新浪微博登录</a></li>
+                      <li class="li5"><a href="#">网易邮箱账号登录</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    $("li").mouseenter(function(){
+        $(this).find("a").css({
+            "color":"white",  
+            // "background": "url(../img/images/b2_03.jpg) no-repeat",
+            // "background-size": "20px 25px"
+            "background":"black"
+        });
+    });
+
+    $("li").mouseleave(function(){
+        $(this).find("a").css({
+            "color":"white",
+            "background":"#2D2D2D"
+        });
+
+    });
+</script>
 </html>

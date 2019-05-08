@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../lib/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+    <button id="btn">创建歌单</button>
+    <audio id="audio" src="" controls="controls"></audio>
+</body>
+<script>
+    $.ajax({
+        url: "http://127.0.0.1:8086/php/crud.php",
+        type: "get",
+        data: "action=gl&u_id=1",
+        dataType: "json",
+        success: function(res){
+            console.log(res);
+            var data="";
+            for(let item in res){
+                data+=`<li list_id="${res[item]["list_id"]}" onclick="listExtend(this)">${res[item]["list_name"]}</li>`;
+            }
+            $("ul").html(data);
+        }
+    });
+    $("#btn").click(function(){
+    })
+
+    function listExtend(el){
+    $.ajax({
+        url: "http://127.0.0.1:8086/php/crud.php",
+        type: "get",
+        data: "action=gs&list_id="+$(el).attr("list_id")+"&u_id=1",
+        dataType: "json",
+        success: function(res){
+            console.log(res);
+            var data="<ul>";
+            for(let item of res){
+                data+=`<li m_id="208902" onclick="play(this)">${item["m_name"]} ${item["m_author"]}</li>`;
+            }
+            data+="</ul>";
+            $(el).append(data);
+        }
+    });
+    }
+    function play(el){
+        $.ajax({
+            url: "http://10.36.133.110:3000/song/url",
+            data: "id="+$(el).attr("m_id"),
+            type: "get",
+            dataType: "json",
+            success: function(res){
+                let obj = res.data;
+                $("audio").attr("src", obj[0].url).prop("autoplay", true)
+            }
+        })
+    }
+</script>
+</html>
