@@ -72,15 +72,15 @@ img{border:0;display:block;}
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: black;
-    opacity: 0.3;
+    background: white;
     float: left;
     margin-left: 6px;
     cursor: pointer;
 }
-.box ul{
+.box .imageBox{
     height: 336px;
     width: 9999px;
+    position: absolute;
 }
 .box ul li{
     float: left;
@@ -90,4 +90,7 @@ img{border:0;display:block;}
     height: 336px;
     float: left;
     background: url(../image/download.jpg) no-repeat;
+}
+.box .tipsBox .active{
+    background: #a40011;
 }
