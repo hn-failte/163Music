@@ -11,6 +11,18 @@ input{outline:none;}
 img{border:0;display:block;}
 .clear-fix:after{content: "";visibility: hidden;overflow: hidden;height: 0;clear: both;display: block;}
 
+
+/* 返回顶部 */
+.backTop{
+    width: 30px;
+    height: 30px;
+    background: red;
+    position: fixed;
+    top: 200px;
+    right: 100px;
+    z-index: 1;
+}
+/* 导航栏 */
 .nav{
     width: 100%;
     height: 34px;
@@ -18,16 +30,31 @@ img{border:0;display:block;}
     border-bottom: 1px solid #a40011;
 }
 .navIn{
-    width: 1100px;
+    width: 920px;
     height: 34px;
     margin: 0 auto;
-    background: pink;
+    padding-left: 180px;
 }
+.navIn em{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 13px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    margin: 7px 17px 0;
+}
+.navIn em:hover{
+    background: rgb(155, 9, 9);
+    border-radius: 10px;
+}
+/* 轮播图 */
 .swiper{
     height: 336px;
     width: 1100px;
     margin: 0 auto;
-    background: orange;
+    background: pink;
 }
 .swiperLi{
     height: 336px;
@@ -39,19 +66,27 @@ img{border:0;display:block;}
     position: absolute;
     width: 38px;
     height: 64px;
-    background: #C20C0C;
+    background: url(../img/sj-img/banner.png) no-repeat top -360px left 0;
     top: 50%;
     margin-top: -32px;
     left: -58px;
+}
+.swiperLi .leftBtn:hover{
+    background: url(../img/sj-img/banner.png) no-repeat top -430px left 0;
+    cursor: pointer;
 }
 .swiperLi .rightBtn{
     position: absolute;
     width: 38px;
     height: 64px;
-    background: #C20C0C;
+    background: url(../img/sj-img/banner.png) no-repeat top -508px left 0;
     right: -58px;
     top: 50%;
     margin-top: -32px;
+}
+.swiperLi .rightBtn:hover{
+    background: url(../img/sj-img/banner.png) no-repeat top -578px left 0;
+    cursor: pointer;
 }
 .box{
     width: 730px;
@@ -89,8 +124,162 @@ img{border:0;display:block;}
     width: 254px;
     height: 336px;
     float: left;
-    background: url(../image/download.jpg) no-repeat;
+    background: url(../img/sj-img/download.jpg) no-repeat;
 }
 .box .tipsBox .active{
     background: #a40011;
 }
+/* 内容区 */
+.con{
+    width: 100%;
+    min-height: 800px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #d3d3d3;
+}
+.content{
+    width: 982px;
+    margin: 0 auto;
+    min-height: 1708px;
+    background: white;
+}
+/* 内容区 > 左块内容 */
+.content .conLeft{
+    width: 729px;
+    min-height: 800px;
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    float: left;
+    /* background: rgb(255, 160, 176); */
+}
+/* 内容区 > 左块内容 > 热门推荐 */
+.content .conLeft .leftTop{
+    width: 689px;
+    height: 523px;
+    background: pink;
+    margin: 20px auto 0;
+}
+.content .conLeft h2{
+    width: 645px;
+    height: 33px;
+    background: url(../img/sj-img/index.png) no-repeat top -154px left -226px;
+    padding: 0 10px 0 34px;
+    border-bottom: 2px solid #C10D0C;
+}
+.content .conLeft h2 .remen{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    float: left;
+    color: #333;
+}
+.content .conLeft .leftTop h2 .tab{
+    float: left;
+    margin: 7px 0 0 20px;
+    font-size: 12px;
+}
+.content .conLeft .leftTop h2 .tab a{
+    color: #666;
+}
+.content .conLeft .leftTop h2 .tab a:hover{
+    text-decoration: underline;
+}
+.content .conLeft .leftTop h2 .tab .leg{
+    margin: 0 10px;
+    color: #ccc;
+}
+.content .conLeft h2 .nore{
+    float: right;
+    width: 40px;
+    height: 16px;
+    margin-top: 9px;
+    font-size: 12px;
+    background: url(../img/sj-img/index.png) no-repeat top -238px left 28px;
+}
+.content .conLeft h2 .nore a{
+    color: #666;
+}
+/* 内容区 > 左块内容 > 个性化推荐 */
+.content .conLeft .leftPer{
+    width: 689px;
+    height: 326px;
+    margin: 0 auto;
+    background: paleturquoise;
+}
+.content .conLeft .leftPer .reco{
+    margin-top: 20px;
+}
+.content .conLeft .leftPer .reco .reco1{
+    height: 240px;
+    width: 140px;
+    background: pink;
+    float: left;
+}
+.content .conLeft .leftPer .reco .reco2{
+    margin-left: 43px;
+}
+.content .conLeft .leftPer .reco .reco3{
+    margin-left: 43px;
+}
+.content .conLeft .leftPer .reco .reco4{
+    margin-left: 43px;
+}
+.content .conLeft .leftPer .reco .reco1 .reco1_a{
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin: 8px 0 6px 0;
+}
+.content .conLeft .leftPer .reco .reco1 .reco1_b{
+    display: block;
+    font-size: 12px;
+    color: #999;
+}
+.content .conLeft .leftPer .reco .reco1 .today{
+    width: 140px;
+    height: 140px;
+    background: url(../img/sj-img/index.png) no-repeat left -260px top -310px;
+
+}
+.content .conLeft .leftPer .reco .reco1 .today .todayWeek{
+    display: block;
+    width: 140px;
+    height: 33px;
+    font-size: 14px;
+    line-height: 33px;
+    text-align: center;
+    color: #fed9d9;
+}
+.content .conLeft .leftPer .reco .reco1 .today .todayDay{
+    display: block;
+    width: 140px;
+    height: 102px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 102px;
+    text-align: center;
+}
+/* 内容区 > 左块内容 > 新碟上架 */
+.content .conLeft .leftNewd{
+    width: 689px;
+    height: 243px;
+    margin: 35px auto 35px;
+    background: papayawhip;
+}
+/* 内容区 > 左块内容 > 榜单 */
+.content .conLeft .leftList{
+    width: 689px;
+    height: 527px;
+    margin: 35px auto 0;
+    background: goldenrod;
+}
+/* 内容区 > 右块内容 */
+.content .conRight{
+    float: right;
+}
+/* 尾部 */
+.tail{
+    height: 100px;
+    width: 100%;
+    background: #f2f2f2;
+}
+
