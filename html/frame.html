@@ -53,8 +53,21 @@
     </div>
 </body>
 <script>
-    $(".li1").mouseenter(function(){
-        $(".li1").css("background","#353535");
+    $("li").mouseenter(function(){
+        $(this).find("a").css({
+            "color":"white",  
+            // "background": "url(../img/images/b2_03.jpg) no-repeat",
+            // "background-size": "20px 25px"
+            "background":"black"
+        });
+    });
+
+    $("li").mouseleave(function(){
+        $(this).find("a").css({
+            "color":"white",
+            "background":"#2D2D2D"
+        });
+
     });
 </script>
 </html>
