@@ -5,7 +5,7 @@
     margin:0 auto;
     width:800px;
     height:260px;
-    background: #fff url("../img/mymusic.png") no-repeat center top;
+    background: #fff url("../img/image01.png") no-repeat center top;
     overflow:hidden;
     position:relative;
 }
@@ -49,4 +49,18 @@
 /*     font-size:16px;
     color:#fff; */
     /* line-height: 40px; */
+}
+.povoer-body-left{
+    width:300px;
+    height:205px;
+    margin-top:40px;
+    background:orange url("../img/image02.png") no-repeat center top;
+    float:left;
+}
+.povoer-body-right{
+    width:187px;
+    height:220px;
+    margin-top:40px;
+    background:cyan;
+    float:left;
 }
