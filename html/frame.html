@@ -7,6 +7,7 @@
     <title>Document</title>
     <link href="../css/frame.css" rel="stylesheet" />
     <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../lib/jquery.js"></script>
     <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 </head>
 <body>
@@ -32,22 +33,28 @@
                 <div class="czzzx">
                     创作者中心
                 </div>
+                <img src="../img/images/a_09.jpg" />
 
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Dropdown
+                      登录
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
+                      <li class="li1"><a href="#">手机号登录</a></li>
+                      <li class="li2"><a href="#">微信登录</a></li>
+                      <li class="li3"><a href="#">QQ登录</a></li>
+                      <li class="li4"><a href="#">新浪微博登录</a></li>
+                      <li class="li5"><a href="#">网易邮箱账号登录</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    $(".li1").mouseenter(function(){
+        $(".li1").css("background","#353535");
+    });
+</script>
 </html>
