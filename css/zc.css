@@ -1,0 +1,138 @@
+
+.big .big-top{
+    width: 560px;
+    height: 57px;
+    line-height: 57px;
+    background-color: #2F2F2F;
+    color: white;
+}
+.big .big-top .big-top-left{
+    float: left;
+    margin-left: 20px;
+}
+.big .big-top .big-top-right{
+    float: right;
+    font-size: 24px;
+    color: darkgray;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+.big-bottom{
+    width: 560px;
+    height: 50px;
+    background-color: #F7F7F7;
+    line-height: 50px;
+    border-top: 1px solid gray; 
+}
+.big-bottom .big-bottom-left{
+    float: left;
+    line-height: 72px;
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+
+
+
+* {
+	margin: 0 auto;
+}
+
+#_start {
+	/*position:absolute;*/
+	height: 0px;
+	width: 0px;
+	background: #D6E9C6;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+}
+
+#_close {
+	float: right;
+	height: 0px;
+	width: 0px;
+	background: none;
+	color: white;
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+#login_container,#regist_container {
+	width: 360px;
+	text-align: center;
+	margin-top: 30px;
+}
+#form_container1 .span1{
+    margin-left: -290px;
+    font-size: 16px;
+}
+#form_container1 .span2{
+    margin-left: -305px;
+    font-size: 16px;
+}
+
+#lab1 {
+	width: 360px;
+	text-align: center;
+	font-family: '微软雅黑';
+}
+
+#lab_login {
+	font-size: 30px;
+	height: 40px;
+	color: #000000;
+}
+
+
+
+#lab_type1,
+#lab_type2 {
+	font-size: 16px;
+	float: left;
+	color: #8C8C8C;
+}
+
+#login_number,
+#login_password {
+	height: 50px;
+	border-radius: 0;
+	margin-top: 10px;
+}
+
+
+
+/*获取验证码*/
+#getVCode{
+	width:125px;
+	height: 40px;
+	border-radius: 0;
+	margin-top: 6px;
+	float: right;
+}
+/*登陆按钮*/
+#login_btn {
+	float: left;
+	width: 360px;
+	height: 40px;
+    margin-top: 30px;
+    background-color: #2F7DCB;
+    border-radius: 5px;
+    border: none;
+}
+
+/*自动登录，找回密码*/
+#rememberOrfindPwd {
+	display: inline-block;
+	height: 40px;
+	line-height: 70px;
+	margin-top: 15px;
+}

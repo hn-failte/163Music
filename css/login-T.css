@@ -48,9 +48,18 @@
     border-radius: 5px;
     border: 1px solid gray;
     margin-top: 15px;
+    background-color: #F8F8F8;
+}
+.big .big-bottom .big-bottom-left .btn1 a,.btn2 a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
 }
 .big .big-bottom .big-bottom-left .btn1:hover,.btn2:hover{
     background-color: #3582CE;
+}
+.big .big-bottom .big-bottom-left a:hover{
     color: white;
 }
 .big .big-bottom .big-bottom-right{
