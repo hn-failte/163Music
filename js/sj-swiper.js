@@ -5,7 +5,7 @@ class Swiper{
         this.$box = this.getDom('.box');
         this.$liAll = this.getDomA('li');
         this.$imageWidth = this.$box.clientWidth;
-        this.$pAll = this.getDomA('p');
+        this.$pAll = this.getDomA('.pl');
         this.leftBtn = this.getDom('.leftBtn');
         this.rightBtn = this.getDom('.rightBtn');
         this.$first = this.$liAll[0];
