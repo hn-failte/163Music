@@ -12,6 +12,8 @@ class Swiper{
         this.$last = this.$liAll[this.$liAll.length - 1];
         this.showIndex = 0;
         this.timer = null;
+        this.$color = ['rgb(24, 24, 24)', 'rgb(11, 87, 111)', 'rgb(2, 6, 7)', 'rgb(208, 164, 153)', 'rgb(180, 108, 153)', 'rgb(241, 242, 244)', 'rgb(255, 114, 0)', 'rgb(242, 237, 233)', 'rgb(82, 204, 153)'];
+        this.$swiperBox = this.getDom('.swiperBox');
     }
     // 入口函数,相当于一个大总闸,控制所有的函数执行
     init(){
@@ -104,12 +106,13 @@ class Swiper{
         });
         // 将展示图片对应的小圆点class名加上
         this.$pAll[index].classList.add('active');
-    }
+    };
     autoPlay(){
         clearInterval(this.timer);
         this.timer = setInterval( _ => {
-            this.showImg(this.showIndex + 1)
-        },1500)
+            this.showImg(this.showIndex + 1);
+            this.$swiperBox.style.background = this.$color[this.showIndex];
+        },1500);
     }
 }
 // 实例化出来的对象

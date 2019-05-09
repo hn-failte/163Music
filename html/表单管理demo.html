@@ -14,7 +14,7 @@
 </body>
 <script>
     $.ajax({
-        url: "http://127.0.0.1:8086/php/crud.php",
+        url: "http://10.36.133.110:8086/php/crud.php",
         type: "get",
         data: "action=gl&u_id=1",
         dataType: "json",
@@ -32,7 +32,7 @@
 
     function listExtend(el){
     $.ajax({
-        url: "http://127.0.0.1:8086/php/crud.php",
+        url: "http://10.36.133.110:8086/php/crud.php",
         type: "get",
         data: "action=gs&list_id="+$(el).attr("list_id")+"&u_id=1",
         dataType: "json",
