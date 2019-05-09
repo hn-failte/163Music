@@ -1,0 +1,35 @@
+{
+    "code": 200,
+    "playlist":{
+        "coverImgUrl": "http://p1.music.126.net/VFd5cboNTbnYsWZ5DBn9bg==/18953381440004340.jpg",
+        "createTime": 1510066731009,
+        "creator": {
+            "avatarImgIdStr": "109951163240891777",
+            "avatarImgId_str": "109951163240891777",
+            "avatarUrl": "http://p1.music.126.net/YUDAnswzzBas9Rdb9iYutQ==/109951163240891777.jpg",
+            "backgroundUrl": "http://p1.music.126.net/1yrCS_dACD9IlXlM_KdmCw==/109951163240889431.jpg",
+            "expertTags": ["华语", "流行", "民谣"]
+        },
+        "description": "在时光中沉淀的首首经典老歌，承载了一段段印刻在内心最深处的回忆。重温经典，回味那些逝去的时光...",
+        "id": 988690134,
+        "name": "经典老歌，久听不厌",
+        "playCount": 83844608,
+        "shareCount": 9456,
+        "tags": ["粤语", "怀旧", "华语"],
+        "trackCount": 115,
+        "trackNumberUpdateTime": 1545886648012,
+        "trackUpdateTime": 1556646158029,
+        "tracks": [
+            {
+                "name": "偏偏喜欢你",
+                "id": 66476,
+                "ar": [{
+                    "id": 2115,
+                    "name": "陈百强"
+                }]
+            },
+            {}
+        ],
+        "updateTime": 1546831855956
+    }
+}

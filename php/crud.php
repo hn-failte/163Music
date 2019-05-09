@@ -1,16 +1,29 @@
 <?php
+header("Access-Control-Allow-Origin:*");
+header("content-type:text/html;charset=utf8");
 
-if($_GET==[]) die();
-$action = $_GET["action"];
-$u_id = $_GET["u_id"];
-// $cookie = $_GET["cookie"];
+if(isset($_GET["action"])){
+    $action = $_GET["action"];
+}
+else{
+    echo json_encode(["state" => 0, "msg" => "need action"]);
+    die();
+}
+if(isset($_GET["u_id"])){
+    $u_id = $_GET["u_id"];
+}
+else{
+    echo json_encode(["state" => 0, "msg" => "need id"]);
+    die();
+}
 
-if($action=="cl"){
+
+if($action=="cl"){ //创建歌单
     $list_name = $_GET["list_name"];
     connect();
     createList($list_name, $u_id);
 }
-else if($action=="as"){
+else if($action=="as"){ //创建歌单歌曲
     $list_name = $_GET["list_name"];
     $m_name = $_GET["m_name"];
     $m_author = $_GET["m_author"];
@@ -21,28 +34,28 @@ else if($action=="as"){
     connect();
     addSongs($m_name, $m_author, $m_duration, $m_album, $list_id, $m_url);
 }
-else if($action=="gl") {
+else if($action=="gl") { //获取用户歌单
     connect();
     getLists($u_id);
 }
-else if($action=="gs") {
+else if($action=="gs") { //获取歌单歌曲
     $list_id = $_GET["list_id"];
     connect();
     getSongs($list_id);
 }
-else if($action=="ul") {
+else if($action=="ul") { //更新用户歌单
     $list_id = $_GET["list_id"];
     $list_name = $_GET["list_name"];
     connect();
     updateList($list_id, $list_name);
 }
-else if($action=="rs") {
+else if($action=="rs") { //移除歌单歌曲
     $m_id = $_GET["m_id"];
     $list_id = $_GET["list_id"];
     connect();
     removeSong($m_id, $list_id);
 }
-else if($action=="dl") {
+else if($action=="dl") { //删除用户歌单
     $list_id = $_GET["list_id"];
     connect();
     deleteList($u_id, $list_id);

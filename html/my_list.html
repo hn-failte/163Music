@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/my_list.css">
+    <link rel="stylesheet" href="../css/music_bar.css">
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../lib/layer/layer.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="h1 text-center">我的</h1>
+        <ul id="ul" class="text-primary"></ul>
+        <button id="btn">创建歌单</button>
+    </div>
+    <div class="audio">
+        <p></p>
+        <audio id="audio" src="" controls="controls"></audio>
+        <button class="glyphicon glyphicon-align-justify"></button>
+        <ul id="asideList">
+        </ul>
+    </div>
+</body>
+<script src="../js/music_bar.js"></script>
+<script>
+
+    $().ready(function(){
+        getList();
+    })
+
+    function getList() {
+        $.ajax({
+            url: "http://10.36.133.110:8086/php/crud.php",
+            type: "get",
+            data: "action=gl&u_id=1",
+            dataType: "json",
+            success: function(res){
+                var data="";
+                for(let item in res){
+                    data+=`<li list_id="${res[item]["list_id"]}"><span class="glyphicon glyphicon-chevron-right"></span>${res[item]["list_name"]}<ul class="song_ul"></ul></li>`;
+                }
+                $("#ul").html(data);
+            }
+        });
+    }
+
+    $("#btn").click(function(){
+        layer.prompt({title: "输入歌单名", formType: 0}, function(pass, index){
+            if(pass!=""){
+                layer.close(index);
+                $.ajax({
+                    url: "http://10.36.133.110:8086/php/crud.php",
+                    data: "action=cl&list_name="+pass+"&u_id=1",
+                    type: "get",
+                    dataType: "json",
+                    success: function(res){
+                        if(res.state==1){
+                            layer.msg("添加成功", {icon: 1}, function(){
+                                getList();
+                            });
+                        }
+                        else{
+                            layer.msg("添加失败", {icon: 2});
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+    $("#ul").on("click", function(e){
+        if($(e.target).parent().attr("list_id") || $(e.target).attr("list_id")){
+            var dealUl;
+            if($(e.target).parent().attr("list_id")) dealUl = $(e.target).parent().children().eq(1);
+            else dealUl = $(e.target).children().eq(1);
+            var icon = dealUl.parent().children().eq(0);
+            
+            if(icon.hasClass("glyphicon-chevron-right")){
+                icon[0].className="";
+                icon.addClass("glyphicon glyphicon-chevron-down");
+            }
+            else if(icon.hasClass("glyphicon-chevron-down")){
+                icon[0].className="";
+                icon.addClass("glyphicon glyphicon-chevron-right");
+            }
+            if(dealUl.html()=="") listExtend(dealUl);
+            else dealUl.toggle();
+        }
+        else if($(e.target).attr("m_id"))  play($(e.target));
+    })
+
+
+    function listExtend(jqobj){
+        $.ajax({
+            url: "http://10.36.133.110:8086/php/crud.php",
+            type: "get",
+            data: "action=gs&list_id="+jqobj.parent().attr("list_id")+"&u_id=1",
+            dataType: "json",
+            success: function(res){
+                var data = "";
+                for(let item of res){
+                    data+=`<li m_id="208902">${item["m_name"]} ${item["m_author"]}</li>`;
+                }
+                jqobj.html(data);
+            }
+        });
+    }
+</script>
+</html>

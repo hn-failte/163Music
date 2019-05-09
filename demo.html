@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>111</li>
+		<li>222</li>
+		<li>222</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var lis = document.getElementsByTagName('li');
+	for(var i=0; i<lis.length; i++){
+		lis[i].onclick = (function(i){
+			return function(){
+				alert(i); // 0 1 2
+				lis[i].className = 'active';
+			}
+		})(i)
+	}
+</script>
+</html>

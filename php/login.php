@@ -1,8 +1,21 @@
 <?php
-if($_GET==[]) die();
+header("Access-Control-Allow-Origin:*");
+header("content-type:text/html;charset=utf8");
 
-$action = $_GET["action"];
-$u_pwd = $_GET["u_pwd"];
+if(isset($_GET["action"])){
+    $action = $_GET["action"];
+}
+else{
+    echo json_encode(["state" => 0, "msg" => "need action"]);
+    die();
+}
+if(isset($_GET["u_pwd"])){
+    $u_pwd = $_GET["u_pwd"];
+}
+else{
+    echo json_encode(["state" => 0, "msg" => "need u_pwd"]);
+    die();
+}
 
 if($action=="r"){ // 注册
     $u_name = $_GET["u_name"];
