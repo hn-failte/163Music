@@ -4,7 +4,8 @@
     height: 57px;
     line-height: 57px;
     background-color: #2F2F2F;
-    color: white;
+	color: white;
+	position: relative;
 }
 .big .big-top .big-top-left{
     float: left;
@@ -78,6 +79,18 @@
 #form_container1 .span2{
     margin-left: -305px;
     font-size: 16px;
+}
+
+
+#form_container1 .success{
+	position: absolute;
+	left: 840px;
+	top: 135px;
+}
+#form_container1 .fail{
+	position: absolute;
+	left: 840px;
+	top: 238px;
 }
 
 #lab1 {
