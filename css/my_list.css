@@ -1,0 +1,17 @@
+ul{
+    list-style-type: none;
+}
+.container>ul li{
+    cursor: pointer;
+    font-size: 16px;
+    user-select:none;
+}
+.container>ul li ul{
+    margin: 2px 0px;
+    padding: 0;
+}
+.container>ul li ul li{
+    margin: 0;
+    font-size: 12px;
+    text-indent: 16px;
+}

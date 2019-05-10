@@ -1,42 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="../css/sjhdl.css" rel="stylesheet" />
+    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../lib/cookie.js"></script>
 </head>
+
 <body>
     <div class="big">
         <div class="big-top">
-                <div class="big-top-left">登录</div>
-                <div class="big-top-right">×</div>
-        </div>
-
-
-
-        <div class="big-middle">
-            <form>
-                <table cellpadding="0" cellspacing="0" border="1" bordercolor="gray">
-                    <tr>
-                        <td>+86▼</td>
-                        <td><input type="text" class="t1" placeholder="请输入手机号" /></td>
-                    </tr>
-                </table>
-                <input type="password" class="t2" placeholder="请输入密码" /><br>
-                <input type="checkbox" class="t3" />自动登录
-                <a href="#" class="t4">忘记密码？</a><br>
-                <button class="t5">登&nbsp;&nbsp;&nbsp;录</button>
-            </form>
-        </div>
-
-
-
-        <div class="big-bottom">
-            <div class="big-bottom-left"><a href="#"><其他登录方式</a></div>
-            <div class="big-bottom-right"><a href="#">没有账号？免费注册></a></div>
+            <div class="big-top-left">手机号登录</div>
+            <div class="big-top-right">×</div>
         </div>
     </div>
+
+
+
+    <div id="login_container">
+
+
+        <div id="form_container1">
+            <br />
+            <form action="http://10.36.133.110:8086/php/login.php" method="get">
+                <input type="hidden" name="action" value="l">
+                <input type="text" class="form-control" placeholder="请输入手机号" id="login_number" name="u_id" />
+                <span class="success"></span>
+                <input type="password" class="form-control" placeholder="请输入密码" id="login_password" name="u_pwd" />
+                <span class="fail"></span>
+                <span id="rememberOrfindPwd">
+                    <span>
+                        <input id="remember" type="checkbox" style="margin-bottom: -1.5px;" />
+                    </span>
+                    <span style="color:#000000">
+                        自动登录&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    </span>
+                    <span style="color:#000000">
+                        忘记密码
+                    </span>
+                </span>
+                <br>
+                <input type="button" value="登录" class="btn btn-success" id="login_btn" />
+            </form>
+        </div>
+    </div>
+
+    <br><br><br><br>
+    <div class="big-bottom">
+        <div class="big-bottom-left"><a href="../html/login-T.html">
+                <其他登录方式</a> </div> <div class="big-bottom-right"><a href="../html/zc.html">没有账号？免费注册></a></div>
+    </div>
+
 </body>
+<script type="text/javascript">
+    var clock = '';
+    var nums = 30;
+    var btn;
+
+    function sendCode(thisBtn) {
+        btn = thisBtn;
+        btn.disabled = true; //将按钮置为不可点击
+        btn.value = '重新获取（' + nums + '）';
+        clock = setInterval(doLoop, 1000); //一秒执行一次
+    }
+
+    
+
+    $("#login_btn").click(function () {
+
+        $.ajax({
+            url: "http://10.36.133.110:8086/php/login.php",
+            data: {
+                "action": "l",
+                "u_id": $("#login_number").val(),
+                "u_pwd": $("#login_password").val()
+            },
+            type: "get",
+            dataType: "json",
+            success: function (res) {
+                console.log(res.state);
+
+
+            }
+
+
+        })
+    })
+    var login_number = document.querySelector('#login_number');
+    console.log(login_number)
+    login_number.onblur = function(){
+        var reg = /^1[1234567890]\d{9}$/
+        var test = reg.test(this.value);
+        console.log(test);
+        if(test){
+            this.nextElementSibling.innerHTML = "验证成功";
+            this.nextElementSibling.style.color = "green";
+        }else{
+            this.nextElementSibling.innerHTML = "验证失败";
+            this.nextElementSibling.style.color = "red";
+        }
+    }
+
+
+    var login_number = document.querySelector('#login_password');
+    console.log(login_password)
+    login_password.onblur = function(){
+        var reg = /^\w{6,18}$/
+        var test = reg.test(this.value);
+        console.log(test);
+        if(test){
+            this.nextElementSibling.innerHTML = "验证成功";
+            this.nextElementSibling.style.color = "green";
+        }else{
+            this.nextElementSibling.innerHTML = "验证失败";
+            this.nextElementSibling.style.color = "red";
+        }
+    }
+   
+</script>
+
+
+
+
+
+
+</body>
+
 </html>

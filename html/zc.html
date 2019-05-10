@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../css/zc.css" rel="stylesheet" />
+    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../lib/cookie.js"></script>
+</head>
+
+<body>
+    <div class="big">
+        <div class="big-top">
+                <div class="big-top-left">手机号注册</div>
+                <div class="big-top-right">×</div>
+        </div>
+    </div>
+
+
+
+    <div id="login_container">
+        
+        
+        <div id="form_container1">
+            <form action="http://10.36.133.110:8086/php/login.php" method="get">
+                <input type="hidden" name="action" value="r">
+                <span class="span1">手机号：</span>
+                <input type="text" class="form-control" placeholder="请输入手机号" id="login_number" name="u_name" /><span class="success"></span><br>
+                <span class="span2">密码：</span>
+                <input type="password" class="form-control" placeholder="设置登录密码，不少于6位" id="login_password" name="u_pwd" /><span class="fail"></span>
+                
+                
+                <input type="submit" value="下一步" class="btn btn-success" id="login_btn" />
+            </form>
+        </div>
+    </div>
+        <br><br><br><br><br><br>
+        <div class="big-bottom">
+            <div class="big-bottom-left"><a href="../html/login-T.html"><返回登录</a></div>
+        </div>
+
+	</body>
+	<script type="text/javascript">
+		var clock = '';
+		var nums = 30;
+		var btn;
+		function sendCode(thisBtn) {
+			btn = thisBtn;
+			btn.disabled = true; //将按钮置为不可点击
+			btn.value = '重新获取（'+nums+'）';
+			clock = setInterval(doLoop, 1000); //一秒执行一次
+		}
+
+		function doLoop() {
+			nums--;
+			if (nums > 0) {
+				btn.value = '重新获取（'+nums+'）';
+			} else {
+				clearInterval(clock); //清除js定时器
+				btn.disabled = false;
+				btn.value = '点击发送验证码';
+				nums = 10; //重置时间
+			}
+        }
+        
+
+        var login_number = document.querySelector('#login_number');
+    console.log(login_number)
+    login_number.onblur = function(){
+        var reg = /^1[1234567890]\d{9}$/
+        var test = reg.test(this.value);
+        console.log(test);
+        if(test){
+            this.nextElementSibling.innerHTML = "验证成功";
+            this.nextElementSibling.style.color = "green";
+        }else{
+            this.nextElementSibling.innerHTML = "验证失败";
+            this.nextElementSibling.style.color = "red";
+        }
+    }
+
+
+    var login_number = document.querySelector('#login_password');
+    console.log(login_password)
+    login_password.onblur = function(){
+        var reg = /^\w{6,18}$/
+        var test = reg.test(this.value);
+        console.log(test);
+        if(test){
+            this.nextElementSibling.innerHTML = "验证成功";
+            this.nextElementSibling.style.color = "green";
+        }else{
+            this.nextElementSibling.innerHTML = "验证失败";
+            this.nextElementSibling.style.color = "red";
+        }
+    }
+   
+		
+		
+	</script>
+
+</body>
+</html>

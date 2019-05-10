@@ -1,0 +1,33 @@
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+.page-header{
+    font-size: 16px;
+    line-height: 28px;
+}
+.page-header>span{
+    font-size: 20px;
+    vertical-align: middle;
+}
+#input{
+    font-size: 16px;
+    vertical-align: middle;
+    padding-left: 5px;
+    outline: none;
+}
+#search{
+    font-size: 16px;
+    vertical-align: middle;
+}
+button{
+    outline: none;
+}

@@ -1,0 +1,12 @@
+html body .myskin .layui-layer-title { /* .myskin为皮肤名 */
+    color: #ccc;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 20px;
+}
+
+body .myskin .layui-layer-btn {
+    color: #ccc;
+}
+
+body .myskin .layui-layer-btn a {}
