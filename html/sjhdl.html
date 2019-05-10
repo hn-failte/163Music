@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/login.css">
     <script src="../lib/jquery.js"></script>
     <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../lib/layer/layer.js"></script>
     <script src="../lib/cookie.js"></script>
 </head>
 
@@ -29,9 +30,9 @@
 
         <div id="form_container1">
             <br />
-            <form action="http://10.36.133.110:8086/php/login.php" method="get">
+            <form action="http://10.36.133.110:8086/php/login.php" method="post">
                 <input type="hidden" name="action" value="l">
-                <input type="text" class="form-control" placeholder="请输入手机号" id="login_number" name="u_id" />
+                <input type="text" class="form-control" placeholder="请输入手机号" id="login_number" name="u_name" />
                 <span class="success"></span>
                 <input type="password" class="form-control" placeholder="请输入密码" id="login_password" name="u_pwd" />
                 <span class="fail"></span>
@@ -40,10 +41,10 @@
                         <input id="remember" type="checkbox" style="margin-bottom: -1.5px;" />
                     </span>
                     <span style="color:#000000">
-                        自动登录&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        自动登录&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     </span>
                     <span style="color:#000000">
-                        忘记密码
+                        <a style="color:black" href="../html/chongzhi.html">忘记密码?</a>
                     </span>
                 </span>
                 <br>
@@ -79,14 +80,17 @@
             url: "http://10.36.133.110:8086/php/login.php",
             data: {
                 "action": "l",
-                "u_id": $("#login_number").val(),
+                "u_name": $("#login_number").val(),
                 "u_pwd": $("#login_password").val()
             },
-            type: "get",
+            type: "post",
             dataType: "json",
             success: function (res) {
-                console.log(res.state);
-
+                if(res.state==1){
+                    setCookie("u_name", $("#login_number").val(), 7);
+                    // location.reload();
+                }
+                else layer.msg("登录失败", {icon: 1});
 
             }
 
