@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_GET["content"])){
     $content = $_GET["content"];
     echo "<script>var content = '$content';</script>";
@@ -8,8 +7,8 @@ else{
     echo "<script>location.href='http://10.36.133.110:8086/html/music_search.html'</script>";
     die();
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -44,7 +43,6 @@ else{
     </div>
 </body>
 <script src="../js/music_search.js"></script>
-</html>
 <script>
     $("#input").val(content);
     $("#search").click();

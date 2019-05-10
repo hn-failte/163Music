@@ -8,8 +8,6 @@ document.domain = window.location.hostname;
 function getChildData(){
     playIndex = top.playIndex;
     playList = top.playList;
-    console.log(playIndex);
-    console.log(playList);
     var data = `<dt>正在播放</dt>`;
     $("#asideList").html();
     for(let i=0;i<playList.length;i++){
@@ -21,5 +19,5 @@ function getChildData(){
 }
 
 $("#go_my_list").click(function(){
-    $("#main").attr("src", "./my_list.html");
+    $("#main").attr("src", "/html/my_list.html");
 })

@@ -2,16 +2,16 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../css/frame.css" rel="stylesheet" />
-    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
-    <script src="../lib/jquery.js"></script>
-    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../css/my_list.css">
-    <link rel="stylesheet" href="../css/music_bar.css">
-    <script src="../lib/layer/layer.js"></script>
+    <link href="/css/frame.css" rel="stylesheet" />
+    <link href="/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="/lib/jquery.js"></script>
+    <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/css/my_list.css">
+    <link rel="stylesheet" href="/css/music_bar.css">
+    <script src="/lib/layer/layer.js"></script>
     <title>163Music</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
     <div class="head">
         <div class="nav">
             <div class="div1">
-                <img src="../img/images/a_03.jpg" />
+                <img src="/img/images/a_03.jpg" />
             </div>
             <div class="div2">
                 <ul>
@@ -32,19 +32,25 @@
                 </ul>
             </div>
             <div class="div3">
-                <form>
-                    <input type="text" class="text">
-                </form>
+                <input id="search" type="text" class="text">
                 <div class="czzzx">
                     创作者中心
                 </div>
-                <img src="../img/images/a_09.jpg" />
+                <img src="/img/images/a_09.jpg" />
 
                 <div class="dropdown">
-                    <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">
                       登录
                       <span class="caret"></span>
                     </button>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li class="li1"><a href="javascript:void(0)" onclick="goToLogin()">手机号登录</a></li>
+                      <li class="li2"><a href="javascript:void(0)" onclick="goToLogin()">微信登录</a></li>
+                      <li class="li3"><a href="javascript:void(0)" onclick="goToLogin()">QQ登录</a></li>
+                      <li class="li4"><a href="javascript:void(0)" onclick="goToLogin()">新浪微博登录</a></li>
+                      <li class="li5"><a href="javascript:void(0)" onclick="goToLogin()">网易邮箱账号登录</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -52,7 +58,7 @@
     <!-- 导航栏结束 -->
 
     <!-- 内容层开始 -->
-    <iframe id="main" name="main" src="http://10.36.133.110:8086/html/music_search.html" frameborder="0"></iframe>
+    <iframe id="main" name="main" src="/html/music_search.html" frameborder="0"></iframe>
     <!-- 内容层结束 -->
 
     <!-- 播放层开始 -->
@@ -69,9 +75,9 @@
     <!-- 播放层结束 -->
 
 </body>
-<script src="../lib/cookie.js"></script>
-<script src="../js/music_bar.js"></script>
-<script src="../js/index.js"></script>
+<script src="/lib/cookie.js"></script>
+<script src="/js/music_bar.js"></script>
+<script src="/js/index.js"></script>
 <script>
     $("li").mouseenter(function(){
         $(this).find("a").css({
@@ -91,16 +97,25 @@
     });
 
     $(".btn").click(function(){
-        $("#main").attr("src", "./login-T.html");
+        $("#main").attr("src", "/html/login-T.html");
     })
-    $(".li1").click(function(){
-        $("#main").attr("src", "./login-T.html");
-    })
-
+    function goToLogin(){
+        $("#main")[0].src="/html/login-T.html";
+    }
+    $(".btn").mouseenter(function(){
+        $(".dropdown-menu").css("display","block");
+    });
+    $(".dropdown-menu").mouseleave(function(){
+        $(".dropdown-menu").css("display","none");
+    });
     $(".dropdown").mouseenter(function(){
         $(this).css("display","block");
-        console.log(666);
+    });
+    $("#search").keydown(function(e){
+        if($("#search").val()=="") return;
+        if(e.keyCode==13){
+            $("#main")[0].src="/php/music_search.php?content="+$("#search").val();
+        }
     })
-
 </script>
 </html>

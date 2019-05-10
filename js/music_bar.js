@@ -64,7 +64,7 @@ $(".audio>.glyphicon-align-justify").click(function(){
 $(".audio>.glyphicon-plus").click(function(){
     if(playList.length==0) return;
     $.ajax({
-        url: "http://10.36.133.110:8086/php/crud.php",
+        url: "/php/crud.php",
         type: "get",
         data: "action=gl&u_id=1",
         dataType: "json",
@@ -92,7 +92,7 @@ $(".audio>.glyphicon-plus").click(function(){
 function addToList(list_id){
     let song = playList[playIndex];
     $.ajax({
-        url: "http://10.36.133.110:8086/php/crud.php",
+        url: "/php/crud.php",
         data: {"action": "as",
                 "list_id": list_id,
                 "u_id": 1,
