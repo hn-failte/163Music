@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
     <link href="../css/frame.css" rel="stylesheet" />
     <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
     <script src="../lib/jquery.js"></script>
@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="../css/my_list.css">
     <link rel="stylesheet" href="../css/music_bar.css">
     <script src="../lib/layer/layer.js"></script>
-
+    <title>163Music</title>
 </head>
 <body>
+    <!-- 导航栏开始 -->
     <div class="head">
         <div class="nav">
             <div class="div1">
@@ -23,7 +24,7 @@
             <div class="div2">
                 <ul>
                     <li><a href="#">发现音乐</a></li>
-                    <li><a href="#">我的音乐</a></li>
+                    <li id="go_my_list"><a href="#">我的音乐</a></li>
                     <li><a href="#">朋友</a></li>
                     <li><a href="#">商城</a></li>
                     <li><a href="#">音乐人</a></li>
@@ -44,47 +45,33 @@
                       登录
                       <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li class="li1"><a href="#">手机号登录</a></li>
-                      <li class="li2"><a href="#">微信登录</a></li>
-                      <li class="li3"><a href="#">QQ登录</a></li>
-                      <li class="li4"><a href="#">新浪微博登录</a></li>
-                      <li class="li5"><a href="#">网易邮箱账号登录</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
     </div>
     <!-- 导航栏结束 -->
 
+    <!-- 内容层开始 -->
+    <iframe id="main" name="main" src="http://10.36.133.110:8086/html/music_search.html" frameborder="0"></iframe>
+    <!-- 内容层结束 -->
 
-
-1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
-
-
-
-
-
-
-    <!-- 底部播放栏 -->
-    <div class="di">
-
-        <div class="player">
-            <p></p>
-            <audio id="audio" src="" controls="controls"></audio>
-            <button class="glyphicon glyphicon-align-justify"></button>
-            <ul id="asideList">
-                <li>111</li>
-            </ul>
-        </div>
-        
+    <!-- 播放层开始 -->
+    <div class="audio">
+        <p id="info" class="text-primary">  -------- </p><!-- 歌曲信息 -->
+        <audio id="audio" src="" controls="controls"></audio><!-- 主体控制标签 -->
+        <button class="glyphicon glyphicon-backward"></button><!-- 上一首 -->
+        <button id="playMode" class="glyphicon glyphicon-th-list" mode="0"></button><!-- 播放模式 -->
+        <button id="addToList" class="glyphicon glyphicon-plus"></button><!-- 添加，触发我的歌单列表 -->
+        <button class="glyphicon glyphicon-forward"></button><!-- 下一首 -->
+        <button id="playingList" class="glyphicon glyphicon-align-justify"></button><!-- 正在播放，触发正在播放列表 -->
+        <dl id="asideList" class=""><dt>正在播放</dt></dl><!-- 正在播放列表 -->
     </div>
-
-
-
+    <!-- 播放层结束 -->
 
 </body>
+<script src="../lib/cookie.js"></script>
 <script src="../js/music_bar.js"></script>
+<script src="../js/index.js"></script>
 <script>
     $("li").mouseenter(function(){
         $(this).find("a").css({
@@ -104,108 +91,16 @@
     });
 
     $(".btn").click(function(){
-        location.href="login-T.html";
+        $("#main").attr("src", "./login-T.html");
     })
     $(".li1").click(function(){
-        location.href="login-T.html";
+        $("#main").attr("src", "./login-T.html");
     })
 
     $(".dropdown").mouseenter(function(){
         $(this).css("display","block");
         console.log(666);
     })
-
-
-
-
-
-
-
-
-    $().ready(function(){
-        getList();
-    })
-
-    function getList() {
-        $.ajax({
-            url: "http://127.0.0.1:8086/php/crud.php",
-            type: "get",
-            data: "action=gl&u_id=1",
-            dataType: "json",
-            success: function(res){
-                var data="";
-                for(let item in res){
-                    data+=`<li list_id="${res[item]["list_id"]}"><span class="glyphicon glyphicon-chevron-right text-warning"></span>${res[item]["list_name"]}<ul class="song_ul"></ul></li>`;
-                }
-                $("#ul").html(data);
-            }
-        });
-    }
-
-    $("#btn").click(function(){
-        layer.prompt({title: "输入歌单名", formType: 0}, function(pass, index){
-            if(pass!=""){
-                layer.close(index);
-                $.ajax({
-                    url: "http://127.0.0.1:8086/php/crud.php",
-                    data: "action=cl&list_name="+pass+"&u_id=1",
-                    type: "get",
-                    dataType: "json",
-                    success: function(res){
-                        if(res.state==1){
-                            layer.msg("添加成功", {icon: 1}, function(){
-                                getList();
-                            });
-                        }
-                        else{
-                            layer.msg("添加失败", {icon: 2});
-                        }
-                    }
-                });
-            }
-        });
-    });
-
-    $("#ul").on("click", function(e){
-        if($(e.target).parent().attr("list_id") || $(e.target).attr("list_id")){
-            var dealUl;
-            if($(e.target).parent().attr("list_id")) dealUl = $(e.target).parent().children().eq(1);
-            else dealUl = $(e.target).children().eq(1);
-            var icon = dealUl.parent().children().eq(0);
-            
-            if(icon.hasClass("glyphicon-chevron-right")){
-                icon[0].className="";
-                icon.addClass("glyphicon glyphicon-chevron-down");
-            }
-            else if(icon.hasClass("glyphicon-chevron-down")){
-                icon[0].className="";
-                icon.addClass("glyphicon glyphicon-chevron-right");
-            }
-            if(dealUl.html()=="") listExtend(dealUl);
-            else dealUl.toggle();
-        }
-        else if($(e.target).attr("m_id"))  play($(e.target));
-    })
-
-
-    function listExtend(jqobj){
-        $.ajax({
-            url: "http://127.0.0.1:8086/php/crud.php",
-            type: "get",
-            data: "action=gs&list_id="+jqobj.parent().attr("list_id")+"&u_id=1",
-            dataType: "json",
-            success: function(res){
-                var data = "";
-                for(let item of res){
-                    data+=`<li m_id="208902">${item["m_name"]} ${item["m_author"]}</li>`;
-                }
-                jqobj.html(data);
-            }
-        });
-    }
-
-
-
 
 </script>
 </html>

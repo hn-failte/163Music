@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="../css/music_search.css">
     <script src="../lib/jquery.js"></script>
     <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../lib/layer/layer.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="container">
         <div class="page-header text-center">
-            <span class="glyphicon glyphicon-music text-primary"></span>
+            <span class="glyphicon glyphicon-music text-default"></span>
             <input type="text" id="input" placeholder="搜索音乐">
-            <input type="button" id="search" class="btn btn-primary" value="搜索" />
+            <button id="search" class="btn btn-default glyphicon glyphicon-search"></button>
         </div>
-        <table id="list" style="margin-bottom: 80px;" class="table table-bordered table-striped table-hover">
+        <table id="list" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
                     <th class="text-center">歌曲</th>
@@ -29,18 +30,6 @@
             <tbody class="text-center"></tbody>
         </table>
     </div>
-    <div class="audio">
-        <p class="text-primary">  -------- </p>
-        <audio id="audio" src="" controls="controls"></audio>
-        <button class="glyphicon glyphicon-backward"></button>
-        <button id="playMode" class="glyphicon glyphicon-th-list" mode="0"></button>
-        <button class="glyphicon glyphicon-plus"></button>
-        <button class="glyphicon glyphicon-align-justify"></button>
-        <button class="glyphicon glyphicon-forward"></button>
-        <ul id="myList"></ul>
-        <ul id="asideList"></ul>
-    </div>
 </body>
-<script src="../js/music_bar.js"></script>
 <script src="../js/music_search.js"></script>
 </html>

@@ -1,4 +1,7 @@
 @charset "utf-8";
+body{
+    overflow: hidden;
+}
 .head{
     height: 91px;
     background-color: #252525;
@@ -107,15 +110,10 @@
     background-size: 20px 25px;
 } 
 
-
-.di{
-    height: 67px;
-    background: #333;
-    position: fixed;
+#main{
+    position: absolute;
+    top: 91px;
+    left: 0px;
     width: 100%;
-    bottom: 0;
+    overflow: scroll;
 }
-.player{
-    height: 67px;
-}
-
