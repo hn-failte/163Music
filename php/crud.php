@@ -9,11 +9,11 @@ else{
     echo json_encode(["state" => 0, "msg" => "need action"]);
     die();
 }
-if(isset($_GET["u_id"])){
-    $u_id = $_GET["u_id"];
+if(isset($_GET["u_name"])){
+    $u_name = $_GET["u_name"];
 }
 else{
-    echo json_encode(["state" => 0, "msg" => "need id"]);
+    echo json_encode(["state" => 0, "msg" => "need u_name"]);
     die();
 }
 
@@ -21,7 +21,7 @@ else{
 if($action=="cl"){ //创建歌单
     $list_name = $_GET["list_name"];
     connect();
-    createList($list_name, $u_id);
+    createList($list_name, $u_name);
 }
 else if($action=="as"){ //创建歌单歌曲
     $m_id = $_GET["m_id"];
@@ -33,7 +33,7 @@ else if($action=="as"){ //创建歌单歌曲
 }
 else if($action=="gl") { //获取用户歌单
     connect();
-    getLists($u_id);
+    getLists($u_name);
 }
 else if($action=="gs") { //获取歌单歌曲
     $list_id = $_GET["list_id"];
@@ -55,7 +55,7 @@ else if($action=="rs") { //移除歌单歌曲
 else if($action=="dl") { //删除用户歌单
     $list_id = $_GET["list_id"];
     connect();
-    deleteList($u_id, $list_id);
+    deleteList($u_name, $list_id);
 }
 else die();
 
@@ -64,9 +64,9 @@ function connect(){
     mysql_query("use 163music");
 }
 
-function createList($list_name, $u_id){ // 创建歌单
-    //http://127.0.0.1:8086/php/crud.php?action=cl&list_name=Love&u_id=1
-    $sql = "insert into lists(list_name, u_id) values('$list_name', $u_id)";
+function createList($list_name, $u_name){ // 创建歌单
+    //http://127.0.0.1:8086/php/crud.php?action=cl&list_name=Love&u_name=1
+    $sql = "insert into lists(list_name, u_name) values('$list_name', $u_name)";
     mysql_query($sql);
     $rows = mysql_affected_rows();
     if($rows > 0) echo json_encode(["state" => 1]);
@@ -74,7 +74,7 @@ function createList($list_name, $u_id){ // 创建歌单
 }
 
 function addSongs($m_id, $m_name, $m_author, $list_id){ // 歌单添加歌曲
-    //http://127.0.0.1:8086/php/crud.php?action=as&list_name=Love&u_id=1&m_name=chushan&m_author=hz&m_duration=36000&m_album=1&list_id=1&m_url=http:\/\/www.baiduscom
+    //http://127.0.0.1:8086/php/crud.php?action=as&list_name=Love&u_name=1&m_name=chushan&m_author=hz&m_duration=36000&m_album=1&list_id=1&m_url=http:\/\/www.baiduscom
     $sql = "insert into songs(m_id, m_name, m_author,  list_id) values($m_id, '${m_name}', '${m_author}',  ${list_id})";
     mysql_query($sql);
     $rows = mysql_affected_rows();
@@ -83,7 +83,7 @@ function addSongs($m_id, $m_name, $m_author, $list_id){ // 歌单添加歌曲
 }
 
 function getSongs($list_id){ // 获取歌单歌曲
-    //http://127.0.0.1:8086/php/crud.php?action=gs&list_id=1&u_id=1
+    //http://127.0.0.1:8086/php/crud.php?action=gs&list_id=1&u_name=1
     $sql = "select * from songs where list_id=${list_id}";
     $result = mysql_query($sql);
     $rows = [];
@@ -93,9 +93,9 @@ function getSongs($list_id){ // 获取歌单歌曲
     echo json_encode($rows);
 }
 
-function getLists($u_id){ // 获取用户歌单
-    //http://127.0.0.1:8086/php/crud.php?action=gl&u_id=1
-    $sql = "select list_id,list_name from lists where u_id=$u_id";
+function getLists($u_name){ // 获取用户歌单
+    //http://127.0.0.1:8086/php/crud.php?action=gl&u_name=1
+    $sql = "select list_id,list_name from lists where u_name=$u_name";
     mysql_query($sql);
     $result = mysql_query($sql);
     $rows = [];
@@ -107,7 +107,7 @@ function getLists($u_id){ // 获取用户歌单
 }
 
 function updateList($list_id, $list_name){ // 更新用户歌单（重命名）
-    //http://127.0.0.1:8086/php/crud.php?action=ul&list_id=2&list_name=1&u_id=1
+    //http://127.0.0.1:8086/php/crud.php?action=ul&list_id=2&list_name=1&u_name=1
     $sql = "update lists set list_name='$list_name' where list_id=$list_id";
     mysql_query($sql);
     $rows = mysql_affected_rows();
@@ -117,7 +117,7 @@ function updateList($list_id, $list_name){ // 更新用户歌单（重命名）
 }
 
 function removeSong($m_id, $list_id){ // 移除歌单歌曲
-    //http://127.0.0.1:8086/php/crud.php?action=rs&m_id=3&list_id=1&u_id=1
+    //http://127.0.0.1:8086/php/crud.php?action=rs&m_id=3&list_id=1&u_name=1
     $sql = "delete from songs where m_id=${m_id} and list_id=${list_id}";
     mysql_query($sql);
     $result = mysql_affected_rows();
@@ -125,9 +125,9 @@ function removeSong($m_id, $list_id){ // 移除歌单歌曲
     else echo json_encode(["state" => 0]);
 }
 
-function deleteList($u_id, $list_id){ // 删除用户歌单
-    //http://127.0.0.1:8086/php/crud.php?action=dl&list_id=13&u_id=1
-    $sql = "delete from lists where list_id=${list_id} and u_id=${u_id}";
+function deleteList($u_name, $list_id){ // 删除用户歌单
+    //http://127.0.0.1:8086/php/crud.php?action=dl&list_id=13&u_name=1
+    $sql = "delete from lists where list_id=${list_id} and u_name=${u_name}";
     mysql_query($sql);
     $result = mysql_affected_rows();
     if($result>0) echo json_encode(["state" => 1]);

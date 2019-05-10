@@ -1,21 +1,32 @@
+document.domain = document.domain;
 var playIndex=0;
 var playList = [];
 document.domain = document.domain;
+var user;
 
 $().ready(function(){
-    getList();
+    user = getUser();
+    if(user) getList(user);
 })
+
+function getUser(){
+    let user = top.getCookie("u_name");
+    console.log(user);
+    
+    if(!user) top.document.getElementById("main").src = "/html/login-T.html";
+    return user;
+}
 
 $(document).on("click", function(e){ //点击其他地方使列表隐藏
     var dom = top.document.querySelector(".audio>#asideList");
     $(dom).hide();
 })
 
-function getList() {
+function getList(user) {
     $.ajax({
         url: "http://10.36.133.110:8086/php/crud.php",
         type: "get",
-        data: "action=gl&u_id=1",
+        data: "action=gl&u_name="+user,
         dataType: "json",
         success: function(res){
             var data="";
@@ -77,7 +88,7 @@ function listExtend(jqobj){
     $.ajax({
         url: "http://10.36.133.110:8086/php/crud.php",
         type: "get",
-        data: "action=gs&list_id="+jqobj.parent().attr("list_id")+"&u_id=1",
+        data: "action=gs&list_id="+jqobj.parent().attr("list_id")+"&u_name="+user,
         dataType: "json",
         success: function(res){
             var data = "";
