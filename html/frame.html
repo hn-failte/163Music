@@ -32,7 +32,7 @@
             </div>
             <div class="div3">
                 <form>
-                    <input type="text" class="text">
+                    <input id="search" type="text" class="text">
                 </form>
                 <div class="czzzx">
                     创作者中心
@@ -40,16 +40,16 @@
                 <img src="../img/images/a_09.jpg" />
 
                 <div class="dropdown">
-                    <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">
                       登录
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li class="li1"><a href="#">手机号登录</a></li>
-                      <li class="li2"><a href="#">微信登录</a></li>
-                      <li class="li3"><a href="#">QQ登录</a></li>
-                      <li class="li4"><a href="#">新浪微博登录</a></li>
-                      <li class="li5"><a href="#">网易邮箱账号登录</a></li>
+                      <li class="li1"><a href="./login-T.html">手机号登录</a></li>
+                      <li class="li2"><a href="./login-T.html">微信登录</a></li>
+                      <li class="li3"><a href="./login-T.html">QQ登录</a></li>
+                      <li class="li4"><a href="./login-T.html">新浪微博登录</a></li>
+                      <li class="li5"><a href="./login-T.html">网易邮箱账号登录</a></li>
                     </ul>
                 </div>
             </div>
@@ -59,7 +59,7 @@
 
 
 
-1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
+
 
 
 
@@ -105,15 +105,16 @@
 
     $(".btn").click(function(){
         location.href="login-T.html";
-    })
-    $(".li1").click(function(){
-        location.href="login-T.html";
-    })
-
+    });
+    $(".btn").mouseenter(function(){
+        $(".dropdown-menu").css("display","block");
+    });
+    $(".dropdown-menu").mouseleave(function(){
+        $(".dropdown-menu").css("display","none");
+    });
     $(".dropdown").mouseenter(function(){
         $(this).css("display","block");
-        console.log(666);
-    })
+    });
 
 
 
@@ -124,7 +125,7 @@
 
     $().ready(function(){
         getList();
-    })
+    });
 
     function getList() {
         $.ajax({
@@ -206,6 +207,10 @@
 
 
 
-
+    $("#search").keydown(function(e){
+        if(e.keyCode==13){
+            location.href="http://10.36.133.110:8086/php/music_search.php?content="+$("#search").val();
+        }
+    })
 </script>
 </html>

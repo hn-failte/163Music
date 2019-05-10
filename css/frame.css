@@ -5,6 +5,7 @@
 }
 .head .nav{
     height: 91px;
+    background-color: #252525;
 }
 .head .nav .div1{
     height: 91px;  
@@ -13,7 +14,7 @@
     float: left;
 }
 .head .nav .div1 img{
-    margin-left: 55px;
+    margin-left: 40px;
 }
 .head .nav .div2{
     width: 540px;
@@ -43,8 +44,10 @@
 }
 .head .nav .div3 .text{
     height: 30px;
+    width: 160px;
     margin-top: 35px;
     border-radius: 20px;
+    padding-left: 40px;
     border: none;
     outline: none;
 }
@@ -58,7 +61,8 @@
     position: absolute;
     left: 200px;
     top: 39px;
-    color: white;   
+    color: white;
+    cursor: pointer;
 }
 .head .nav .div3 .dropdown{
     position: absolute;
@@ -78,7 +82,7 @@
     left: 10px;
 }
 .head .nav .div3 .dropdown-menu{
-    width: 50px;
+    width: 45px;
 }
 .head .nav .div3 .dropdown ul{
     background-color: #2D2D2D;
@@ -109,8 +113,6 @@
 
 
 .di{
-    height: 67px;
-    background: #333;
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -118,4 +120,3 @@
 .player{
     height: 67px;
 }
-
