@@ -145,15 +145,26 @@ var home = (function(){
                         <div class="song">
                             <span class="song1">${x.id}</span>
                             <span class="song2">${x.name}</span>
-                            <span class="song3"></span>
-                            <span class="song4"></span> 
-                            <span class="song5"></span>
+                            <span class="song3 songPic"></span>
+                            <span class="song4 songPic"></span> 
+                            <span class="song5 songPic"></span>
                         </div>
                     `
                 });
                 $rankDoc.innerHTML = str;
                 $rankDoc2.innerHTML = str;
                 $rankDoc3.innerHTML = str;
+
+                $('.ranking').on("mouseenter",".song",function(){
+                    this.children[2].style.display = 'block';
+                    this.children[3].style.display = 'block';
+                    this.children[4].style.display = 'block';
+                })
+                $('.ranking').on("mouseleave",".song",function(){
+                    this.children[2].style.display = 'none';
+                    this.children[3].style.display = 'none';
+                    this.children[4].style.display = 'none';
+                })
             });
         },
         event() {
