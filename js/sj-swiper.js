@@ -86,17 +86,16 @@ class Swiper{
             this.$imageBox.style.left = 0;
         }
         
-
         // 没有过渡直接跳到下一张图片
         // this.$imageBox.style.left = -this.$imageWidth * (index + 1) + 'px';
 
         // move()调用了一个封装运动函数,实现图片之间的平滑过渡,代码在下方
-        // move(this.$imageBox, 'left', -this.$imageWidth * (index + 1));
-        animate(this.$imageBox, {
-            param : {
-                'left' : -this.$imageWidth * (index + 1),
-            }
-        })
+        move(this.$imageBox, 'left', -this.$imageWidth * (index + 1));
+        // animate(this.$imageBox, {
+        //     param : {
+        //         'left' : -this.$imageWidth * (index + 1),
+        //     }
+        // })
 
         // 把index值赋给showIndex,方便给autoPlay()使用
         this.showIndex = index;
@@ -117,4 +116,3 @@ class Swiper{
 }
 // 实例化出来的对象
 var swiper = new Swiper();
-// 执行入口函数init()
