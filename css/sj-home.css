@@ -78,8 +78,8 @@ img{border:0;display:block;}
     background: url(../img/sj-img/banner.png) no-repeat top -360px left 0;
     top: 50%;
     margin-top: -32px;
-    /* left: -58px; */
-    left: 0;
+    left: -58px;
+    /* left: 0; */
 }
 .swiperLi .leftBtn:hover{
     background: url(../img/sj-img/banner.png) no-repeat top -430px left 0;
@@ -90,8 +90,8 @@ img{border:0;display:block;}
     width: 38px;
     height: 64px;
     background: url(../img/sj-img/banner.png) no-repeat top -508px left 0;
-    /* right: -58px; */
-    right: 253px;
+    right: -58px;
+    /* right: 253px; */
     top: 50%;
     margin-top: -32px;
 }
