@@ -8,18 +8,21 @@
     <title>网易云音乐</title>
     <link rel="stylesheet" href="../css/sj-home.css">
     <script src="../lib/jquery.js"></script>
-    <style>
-        #img {
-            width: 100px;
-        }
-    </style>
+
+    <!-- <link href="../css/frame.css" rel="stylesheet" /> -->
+    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/my_list.css">
+    <link rel="stylesheet" href="../css/music_bar.css">
+    <script src="../lib/layer/layer.js"></script>
 </head>
 
 <body>
+    
     <!-- 返回顶部 -->
     <div class="backTop"></div>
     <!-- 导航栏 -->
-    <div class="nav">
+    <div class="navBox">
         <div class="navIn">
             <em>推荐</em>
             <em>排行榜</em>
@@ -36,15 +39,15 @@
             <div class="swiperLi">
                 <div class="box">
                     <ul class="imageBox">
-                        <li><img src="../img/sj-img/swiper1.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper2.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper3.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper4.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper5.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper6.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper7.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper8.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper9.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper1.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper2.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper3.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper4.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper5.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper6.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper7.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper8.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper9.jpg" alt=""></li>
                     </ul>
                     <ol class="tipsBox">
                         <p class="pl"></p>
@@ -63,7 +66,7 @@
                 <span class="rightBtn"></span>
             </div>
         </div>
-        
+
     </div>
     <!-- 内容 -->
     <div class="con">
@@ -250,15 +253,18 @@
             </div>
         </div>
     </div>
+    
 
 
 </body>
-<script src="../js/sj-swiper.js"></script>
 <script src="../js/sj-move1.1.0.js"></script>
+<script src="../js/sj-animate7.0.js"></script>
+<script src="../js/sj-swiper.js"></script>
 <script src="../js/sj-home.js"></script>
 <script src="../js/sj-getdata.js"></script>
 <script>
     swiper.init();
 </script>
+
 
 </html>

@@ -8,7 +8,7 @@ $.ajax({
     success: function (res) {
         var data = "";
         var lists = res.playlists;
-        console.log(lists)
+        console.log(lists);
 
         var str = ``;
         for(var j = 0; j < 8; j++){

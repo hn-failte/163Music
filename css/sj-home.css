@@ -21,15 +21,13 @@ img{border:0;display:block;}
     left: 50%;
     margin-left: 500px;
     bottom: 160px;
-    /* top: 200px; */
-    /* right: 100px; */
     z-index: 1;
 }
 .backTop:hover{
     background: url(../img/sj-img/top.png) no-repeat left -325px top -46px;
 }
 /* 导航栏 */
-.nav{
+.navBox{
     width: 100%;
     height: 34px;
     background: #C20C0C;
@@ -70,6 +68,7 @@ img{border:0;display:block;}
     width: 984px;
     margin: 0 auto;
     position: relative;
+    
 }
 .swiperLi .leftBtn{
     position: absolute;
@@ -78,8 +77,8 @@ img{border:0;display:block;}
     background: url(../img/sj-img/banner.png) no-repeat top -360px left 0;
     top: 50%;
     margin-top: -32px;
-    /* left: -58px; */
-    left: 0;
+    left: -58px;
+    /* left: 0; */
 }
 .swiperLi .leftBtn:hover{
     background: url(../img/sj-img/banner.png) no-repeat top -430px left 0;
@@ -90,8 +89,8 @@ img{border:0;display:block;}
     width: 38px;
     height: 64px;
     background: url(../img/sj-img/banner.png) no-repeat top -508px left 0;
-    /* right: -58px; */
-    right: 253px;
+    right: -58px;
+    /* right: 253px; */
     top: 50%;
     margin-top: -32px;
 }
@@ -358,6 +357,7 @@ img{border:0;display:block;}
     width: 218px;
     font-size: 12px;
     padding-left: 10px;
+    cursor: pointer;
 }
 .content .conLeft .leftList .ranking .song .song1{
     font-size: 16px;
@@ -370,6 +370,13 @@ img{border:0;display:block;}
 .content .conLeft .leftList .ranking .song .song2{
     float: left;
     line-height: 32px;
+}
+
+.content .conLeft .leftList .ranking .song .songPic{
+    display: none;
+}
+.content .conLeft .leftList .ranking .song:hover{
+    background: rgb(232, 232, 232);
 }
 .content .conLeft .leftList .ranking .song .song3{
     float: right;
@@ -475,7 +482,7 @@ img{border:0;display:block;}
     float: right;
     width: 252px;
     /* height: 1708px; */
-    min-height: 1777px;
+    min-height: 1796px;
     border-right: 1px solid #d3d3d3;
     
 }
@@ -628,12 +635,14 @@ img{border:0;display:block;}
 /* 尾部 */
 .tail{
     height: 149px;
+    /* height: 200px; */
     width: 100%;
     background: #f2f2f2;
 }
 .tail .tailDoc{
     width: 980px;
     height: 91px;
+    /* height: 200px; */
     margin: 0 auto;
 }
 .tail .tailDoc .tailLeft{

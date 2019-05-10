@@ -23,7 +23,7 @@
             </div>
             <div class="div2">
                 <ul>
-                    <li><a href="#">发现音乐</a></li>
+                    <li id="go_index"><a href="#">发现音乐</a></li>
                     <li id="go_my_list"><a href="#">我的音乐</a></li>
                     <li><a href="#">朋友</a></li>
                     <li><a href="#">商城</a></li>
@@ -58,7 +58,7 @@
     <!-- 导航栏结束 -->
 
     <!-- 内容层开始 -->
-    <iframe id="main" name="main" src="/html/music_search.html" frameborder="0"></iframe>
+    <iframe id="main" name="main" src="/html/sj-home.html" frameborder="0"></iframe>
     <!-- 内容层结束 -->
 
     <!-- 播放层开始 -->
@@ -98,6 +98,9 @@
 
     $(".btn").click(function(){
         $("#main").attr("src", "/html/login-T.html");
+    })
+    $("#go_index").click(function(){
+        $("#main").attr("src", "/html/sj-home.html");
     })
     function goToLogin(){
         $("#main")[0].src="/html/login-T.html";
