@@ -24,15 +24,12 @@ if($action=="cl"){ //创建歌单
     createList($list_name, $u_id);
 }
 else if($action=="as"){ //创建歌单歌曲
-    $list_name = $_GET["list_name"];
+    $m_id = $_GET["m_id"];
     $m_name = $_GET["m_name"];
     $m_author = $_GET["m_author"];
-    $m_duration = $_GET["m_duration"];
-    $m_album = $_GET["m_album"];
     $list_id = $_GET["list_id"];
-    $m_url = $_GET["m_url"];
     connect();
-    addSongs($m_name, $m_author, $m_duration, $m_album, $list_id, $m_url);
+    addSongs($m_id, $m_name, $m_author, $list_id);
 }
 else if($action=="gl") { //获取用户歌单
     connect();
@@ -76,10 +73,9 @@ function createList($list_name, $u_id){ // 创建歌单
     else echo json_encode(["state" => 0]);
 }
 
-function addSongs($m_name, $m_author, $m_duration, $m_album, $list_id, $m_url){ // 歌单添加歌曲
+function addSongs($m_id, $m_name, $m_author, $list_id){ // 歌单添加歌曲
     //http://127.0.0.1:8086/php/crud.php?action=as&list_name=Love&u_id=1&m_name=chushan&m_author=hz&m_duration=36000&m_album=1&list_id=1&m_url=http:\/\/www.baiduscom
-    $sql = "insert into songs(m_name, m_author, m_duration, m_album, list_id, m_url) values('${m_name}', '${m_author}', ${m_duration}, '${m_album}', ${list_id}, '${m_url}')";
-    echo $sql;
+    $sql = "insert into songs(m_id, m_name, m_author,  list_id) values($m_id, '${m_name}', '${m_author}',  ${list_id})";
     mysql_query($sql);
     $rows = mysql_affected_rows();
     if($rows > 0) echo json_encode(["state" => 1]);

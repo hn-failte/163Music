@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/frame.css" rel="stylesheet" />
+    <link href="/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="/lib/jquery.js"></script>
+    <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/css/my_list.css">
+    <link rel="stylesheet" href="/css/music_bar.css">
+    <script src="/lib/layer/layer.js"></script>
+    <title>163Music</title>
+</head>
+<body>
+    <!-- 导航栏开始 -->
+    <div class="head">
+        <div class="nav">
+            <div class="div1">
+                <img src="/img/images/a_03.jpg" />
+            </div>
+            <div class="div2">
+                <ul>
+                    <li><a href="#">发现音乐</a></li>
+                    <li id="go_my_list"><a href="#">我的音乐</a></li>
+                    <li><a href="#">朋友</a></li>
+                    <li><a href="#">商城</a></li>
+                    <li><a href="#">音乐人</a></li>
+                    <li><a href="#">下载客户端</a></li>
+                </ul>
+            </div>
+            <div class="div3">
+                <input id="search" type="text" class="text">
+                <div class="czzzx">
+                    创作者中心
+                </div>
+                <img src="/img/images/a_09.jpg" />
+
+                <div class="dropdown">
+                    <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">
+                      登录
+                      <span class="caret"></span>
+                    </button>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li class="li1"><a href="javascript:void(0)" onclick="goToLogin()">手机号登录</a></li>
+                      <li class="li2"><a href="javascript:void(0)" onclick="goToLogin()">微信登录</a></li>
+                      <li class="li3"><a href="javascript:void(0)" onclick="goToLogin()">QQ登录</a></li>
+                      <li class="li4"><a href="javascript:void(0)" onclick="goToLogin()">新浪微博登录</a></li>
+                      <li class="li5"><a href="javascript:void(0)" onclick="goToLogin()">网易邮箱账号登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 导航栏结束 -->
+
+    <!-- 内容层开始 -->
+    <iframe id="main" name="main" src="/html/music_search.html" frameborder="0"></iframe>
+    <!-- 内容层结束 -->
+
+    <!-- 播放层开始 -->
+    <div class="audio">
+        <p id="info" class="text-primary">  -------- </p><!-- 歌曲信息 -->
+        <audio id="audio" src="" controls="controls"></audio><!-- 主体控制标签 -->
+        <button class="glyphicon glyphicon-backward"></button><!-- 上一首 -->
+        <button id="playMode" class="glyphicon glyphicon-th-list" mode="0"></button><!-- 播放模式 -->
+        <button id="addToList" class="glyphicon glyphicon-plus"></button><!-- 添加，触发我的歌单列表 -->
+        <button class="glyphicon glyphicon-forward"></button><!-- 下一首 -->
+        <button id="playingList" class="glyphicon glyphicon-align-justify"></button><!-- 正在播放，触发正在播放列表 -->
+        <dl id="asideList" class=""><dt>正在播放</dt></dl><!-- 正在播放列表 -->
+    </div>
+    <!-- 播放层结束 -->
+
+</body>
+<script src="/lib/cookie.js"></script>
+<script src="/js/music_bar.js"></script>
+<script src="/js/index.js"></script>
+<script>
+    $("li").mouseenter(function(){
+        $(this).find("a").css({
+            "color":"white",  
+            // "background": "url(../img/images/b2_03.jpg) no-repeat",
+            // "background-size": "20px 25px"
+            "background":"black"
+        });
+    });
+
+    $("li").mouseleave(function(){
+        $(this).find("a").css({
+            "color":"white",
+            "background":"#2D2D2D"
+        });
+
+    });
+
+    $(".btn").click(function(){
+        $("#main").attr("src", "/html/login-T.html");
+    })
+    function goToLogin(){
+        $("#main")[0].src="/html/login-T.html";
+    }
+    $(".btn").mouseenter(function(){
+        $(".dropdown-menu").css("display","block");
+    });
+    $(".dropdown-menu").mouseleave(function(){
+        $(".dropdown-menu").css("display","none");
+    });
+    $(".dropdown").mouseenter(function(){
+        $(this).css("display","block");
+    });
+    $("#search").keydown(function(e){
+        if($("#search").val()=="") return;
+        if(e.keyCode==13){
+            $("#main")[0].src="/php/music_search.php?content="+$("#search").val();
+        }
+    })
+</script>
+</html>

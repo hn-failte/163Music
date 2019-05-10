@@ -18,15 +18,20 @@ a:visited{
     font-size: 20px;
     vertical-align: middle;
 }
+.glyphicon-music{
+    color: rgb(10, 210, 60);
+}
 #input{
+    width: 300px;
     font-size: 16px;
     vertical-align: middle;
     padding-left: 5px;
     outline: none;
 }
 #search{
+    color: rgb(190, 10, 10);
     font-size: 16px;
-    vertical-align: middle;
+    height: 36px;
 }
 button{
     outline: none;
