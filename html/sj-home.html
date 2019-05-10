@@ -8,18 +8,62 @@
     <title>网易云音乐</title>
     <link rel="stylesheet" href="../css/sj-home.css">
     <script src="../lib/jquery.js"></script>
+
+    <link href="../css/frame.css" rel="stylesheet" />
+    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/my_list.css">
+    <link rel="stylesheet" href="../css/music_bar.css">
+    <script src="../lib/layer/layer.js"></script>
     <style>
-        #img {
+        /* #img {
             width: 100px;
-        }
+        } */
     </style>
 </head>
 
 <body>
+    <!-- 头部 -->
+    <div class="head">
+        <div class="nav">
+            <div class="div1">
+                <img style="margin: 15px 0 0 30px" src="../img/images/a_03.jpg" />
+            </div>
+            <div class="div2">
+                <ul>
+                    <li><a href="#">发现音乐</a></li>
+                    <li id="go_my_list"><a href="#">我的音乐</a></li>
+                    <li><a href="#">朋友</a></li>
+                    <li><a href="#">商城</a></li>
+                    <li><a href="#">音乐人</a></li>
+                    <li><a href="#">下载客户端</a></li>
+                </ul>
+            </div>
+            <div class="div3">
+                <form>
+                    <input type="text" class="text">
+                </form>
+                <div class="czzzx">
+                    创作者中心
+                </div>
+                <img src="../img/images/a_09.jpg" />
+
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        登录
+                        <span class="caret"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- 返回顶部 -->
     <div class="backTop"></div>
     <!-- 导航栏 -->
-    <div class="nav">
+    <div class="navBox">
         <div class="navIn">
             <em>推荐</em>
             <em>排行榜</em>
@@ -36,15 +80,15 @@
             <div class="swiperLi">
                 <div class="box">
                     <ul class="imageBox">
-                        <li><img src="../img/sj-img/swiper1.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper2.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper3.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper4.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper5.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper6.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper7.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper8.jpg" alt=""></li>
-                        <li><img src="../img/sj-img/swiper9.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper1.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper2.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper3.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper4.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper5.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper6.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper7.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper8.jpg" alt=""></li>
+                        <li class="lil"><img src="../img/sj-img/swiper9.jpg" alt=""></li>
                     </ul>
                     <ol class="tipsBox">
                         <p class="pl"></p>
@@ -63,7 +107,7 @@
                 <span class="rightBtn"></span>
             </div>
         </div>
-        
+
     </div>
     <!-- 内容 -->
     <div class="con">
@@ -250,6 +294,20 @@
             </div>
         </div>
     </div>
+    <!-- 底部播放器 -->
+    <!-- <iframe id="main" name="main" src="http://10.36.133.110:8086/html/music_search.html" frameborder="0"></iframe> -->
+
+    <div class="audio">
+        <p class="text-primary">  -------- </p>
+        <audio id="audio" src="" controls="controls"></audio>
+        <button class="glyphicon glyphicon-backward"></button>
+        <button id="playMode" class="glyphicon glyphicon-th-list" mode="0"></button>
+        <button class="glyphicon glyphicon-plus"></button>
+        <button class="glyphicon glyphicon-align-justify"></button>
+        <button class="glyphicon glyphicon-forward"></button>
+        <ul id="myList"></ul>
+        <ul id="asideList"></ul>
+    </div>
 
 
 </body>
@@ -260,6 +318,122 @@
 <script src="../js/sj-getdata.js"></script>
 <script>
     swiper.init();
+</script>
+<script>
+    $("li").mouseenter(function () {
+        $(this).find("a").css({
+            "color": "white",
+            // "background": "url(../img/images/b2_03.jpg) no-repeat",
+            // "background-size": "20px 25px"
+            "background": "black"
+        });
+    });
+
+    $("li").mouseleave(function () {
+        $(this).find("a").css({
+            "color": "white",
+            "background": "#2D2D2D"
+        });
+
+    });
+
+    $(".btn").click(function () {
+        location.href = "login-T.html";
+    })
+    $(".li1").click(function () {
+        location.href = "login-T.html";
+    })
+
+    $(".dropdown").mouseenter(function () {
+        $(this).css("display", "block");
+        console.log(666);
+    })
+
+
+
+    $().ready(function(){
+        getList();
+    })
+
+    function getList() {
+        $.ajax({
+            url: "http://127.0.0.1:8086/php/crud.php",
+            type: "get",
+            data: "action=gl&u_id=1",
+            dataType: "json",
+            success: function(res){
+                var data="";
+                for(let item in res){
+                    data+=`<li list_id="${res[item]["list_id"]}"><span class="glyphicon glyphicon-chevron-right text-warning"></span>${res[item]["list_name"]}<ul class="song_ul"></ul></li>`;
+                }
+                $("#ul").html(data);
+            }
+        });
+    }
+
+    $("#btn").click(function(){
+        layer.prompt({title: "输入歌单名", formType: 0}, function(pass, index){
+            if(pass!=""){
+                layer.close(index);
+                $.ajax({
+                    url: "http://127.0.0.1:8086/php/crud.php",
+                    data: "action=cl&list_name="+pass+"&u_id=1",
+                    type: "get",
+                    dataType: "json",
+                    success: function(res){
+                        if(res.state==1){
+                            layer.msg("添加成功", {icon: 1}, function(){
+                                getList();
+                            });
+                        }
+                        else{
+                            layer.msg("添加失败", {icon: 2});
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+    $("#ul").on("click", function(e){
+        if($(e.target).parent().attr("list_id") || $(e.target).attr("list_id")){
+            var dealUl;
+            if($(e.target).parent().attr("list_id")) dealUl = $(e.target).parent().children().eq(1);
+            else dealUl = $(e.target).children().eq(1);
+            var icon = dealUl.parent().children().eq(0);
+            
+            if(icon.hasClass("glyphicon-chevron-right")){
+                icon[0].className="";
+                icon.addClass("glyphicon glyphicon-chevron-down");
+            }
+            else if(icon.hasClass("glyphicon-chevron-down")){
+                icon[0].className="";
+                icon.addClass("glyphicon glyphicon-chevron-right");
+            }
+            if(dealUl.html()=="") listExtend(dealUl);
+            else dealUl.toggle();
+        }
+        else if($(e.target).attr("m_id"))  play($(e.target));
+    })
+
+
+    function listExtend(jqobj){
+        $.ajax({
+            url: "http://127.0.0.1:8086/php/crud.php",
+            type: "get",
+            data: "action=gs&list_id="+jqobj.parent().attr("list_id")+"&u_id=1",
+            dataType: "json",
+            success: function(res){
+                var data = "";
+                for(let item of res){
+                    data+=`<li m_id="208902">${item["m_name"]} ${item["m_author"]}</li>`;
+                }
+                jqobj.html(data);
+            }
+        });
+    }
+
+
 </script>
 
 </html>

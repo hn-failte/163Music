@@ -29,7 +29,7 @@ img{border:0;display:block;}
     background: url(../img/sj-img/top.png) no-repeat left -325px top -46px;
 }
 /* 导航栏 */
-.nav{
+.navBox{
     width: 100%;
     height: 34px;
     background: #C20C0C;
@@ -636,13 +636,15 @@ img{border:0;display:block;}
 }
 /* 尾部 */
 .tail{
-    height: 149px;
+    /* height: 149px; */
+    height: 200px;
     width: 100%;
     background: #f2f2f2;
 }
 .tail .tailDoc{
     width: 980px;
-    height: 91px;
+    /* height: 91px; */
+    height: 200px;
     margin: 0 auto;
 }
 .tail .tailDoc .tailLeft{

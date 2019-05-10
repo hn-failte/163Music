@@ -200,7 +200,7 @@ var home = (function(){
                 if(param.method == 'get' && param.data){
                     xhr.open(param.mathod, param.url + '?' + param.data, true);
                 }else{
-                    xhr.open(param.method, param.url, true)
+                    xhr.open(param.method, param.url, true);
                 }
                 if(param.method == 'post'){
                     xhr.setRequestHeader('Content-type', "application/x-www-form-urlencoded");

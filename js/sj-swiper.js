@@ -3,7 +3,7 @@ class Swiper{
         this.$imageBox = this.getDom('.imageBox');
         this.$tipsBox = this.getDom('.tipsBox');
         this.$box = this.getDom('.box');
-        this.$liAll = this.getDomA('li');
+        this.$liAll = this.getDomA('.lil');
         this.$imageWidth = this.$box.clientWidth;
         this.$pAll = this.getDomA('.pl');
         this.leftBtn = this.getDom('.leftBtn');
