@@ -110,13 +110,13 @@
 
 .myhome{
     width:100%;
-    height:500px;
+    height:700px;
     background:#eeeeee;
     border-top: 5px solid red;
 }
 .myhome-page{
     width:980px;
-    height:500px;
+    height:600px;
     margin:0 auto;
     background:#ffffff;
 }
@@ -134,14 +134,17 @@
 }
 .homepage-nav{
     width:100%;
-    height:100px;
+    height:60px;
+    padding-left: 40px;
+    padding-top:20px;
+    font-size:20px;
     border-bottom: 2px solid red;
 }
 .page-usename{
     float:right;
     width:700px;
     height:40px;
-    line-height: 50px;
+    line-height: 30px;
     position: relative;
     border-bottom: 1px solid #ccc;
 }
@@ -158,6 +161,53 @@
     line-height: 0px;
     position: absolute;
     left:500px;
+}
+.username-span1{
+    position: absolute;
+    text-align: center;
+    width:60px;
+    height:40px;
+    border-left: 1px solid #ccc;
+    left:250px;
+    top:80px;
+}
+.username-span2{
+    position: absolute;
+    text-align: center;
+    width:60px;
+    height:40px;
+    border-left: 1px solid #ccc;
+    left:320px;
+    top:80px;
+}
+.username-span3{
+    position: absolute;
+    text-align: center;
+    width:60px;
+    height:40px;
+    border-left: 1px solid #ccc;
+    left:390px;
+    top:80px;
+}
+.username-address{
+    position: absolute;
+    height:40px;
+    left:250px;
+    top:140px;
+}
+.username-social{
+    position: absolute;
+    height:40px;
+    left:250px;
+    top:170px;
+}
+.homepage-show{
+    width:100%;
+    height:400px;
+}
+.homepage-show img{
+    margin-left:40px;
+    margin-top:30px;
 }
 .di{
     height: 67px;
