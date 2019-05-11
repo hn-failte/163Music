@@ -22,8 +22,6 @@ $(document).on("click", function(e){ //点击其他地方使列表隐藏
 })
 
 function getList(user) {
-    console.log(user);
-    
     $.ajax({
         url: "/php/crud.php",
         type: "get",
@@ -31,10 +29,20 @@ function getList(user) {
         dataType: "json",
         success: function(res){
             var data="";
+            $("#ul").html("");
             for(let item in res){
-                data+=`<li list_id="${res[item]["list_id"]}"><span class="glyphicon glyphicon-chevron-right"></span>${res[item]["list_name"]}<ul class="song_ul"></ul></li>`;
+                data += `
+                        <li class="my-li" list_id="${res[item]["list_id"]}" onclick="listExtend(${res[item]["list_id"]})">
+                            <img src="../img/images/c_06.jpg" alt="" class="myli-img">
+                            <span>${res[item]["list_name"]}</span>
+                            <p>${user}</p>
+                            <ul></ul>
+                        </li>
+                        `
+                // data+=`<li list_id="${res[item]["list_id"]}"><span class="glyphicon glyphicon-chevron-right"></span>${res[item]["list_name"]}<ul class="song_ul"></ul></li>`;
             }
             $("#ul").html(data);
+            if($("#ul").html()!="") $("#ul>li").eq(0).click();
         }
     });
 }
@@ -63,38 +71,11 @@ $("#btn").click(function(){
     });
 });
 
-$("#ul").on("click", function(e){
-    if($(e.target).parent().attr("list_id") || $(e.target).attr("list_id")){
-        var dealUl;
-        if($(e.target).parent().attr("list_id")) dealUl = $(e.target).parent().children().eq(1);
-        else dealUl = $(e.target).children().eq(1);
-        var icon = dealUl.parent().children().eq(0);
-        
-        if(icon.hasClass("glyphicon-chevron-right")){
-            icon[0].className="";
-            icon.addClass("glyphicon glyphicon-chevron-down");
-        }
-        else if(icon.hasClass("glyphicon-chevron-down")){
-            icon[0].className="";
-            icon.addClass("glyphicon glyphicon-chevron-right");
-        }
-        if(dealUl.html()=="") listExtend(dealUl);
-        else dealUl.toggle();
-    }
-    else if($(e.target).attr("m_id")){
-        playIndex = $(e.target).attr("index");
-        top.playIndex = playIndex;
-        top.playList = playList;
-        top.play(playIndex);
-    }
-})
-
-
-function listExtend(jqobj){
+function listExtend(list_id){
     $.ajax({
         url: "/php/crud.php",
         type: "get",
-        data: "action=gs&list_id="+jqobj.parent().attr("list_id")+"&u_name="+user,
+        data: "action=gs&list_id="+list_id+"&u_name="+user,
         dataType: "json",
         success: function(res){
             var data = "";
@@ -106,9 +87,26 @@ function listExtend(jqobj){
                     artists: res[i]["m_author"]
 
                 });
-                data+=`<li m_id="${res[i]["m_id"]}" index="${i}">${res[i]["m_name"]} ${res[i]["m_author"]}</li>`;
+                data += `
+                        <li>
+                            <span onclick="toParent(${i})" index="${i}">操作</span>
+                            <b>${res[i]["m_name"]}</b>
+                            <em>${res[i]["m_author"]}</em>
+                            <div>专辑名称</div>
+                        </li>
+                        `
             }
-            jqobj.html(data);
+            $("#songs").html(data);
+            console.log(playList);
+            
         }
     });
+}
+
+function toParent(index){
+    playIndex = index;
+    top.playIndex=playIndex;
+    top.playList=playList;
+    top.getChildData();
+    top.play(playIndex);
 }

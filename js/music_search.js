@@ -43,7 +43,6 @@ $("#search").click(function(){ //获取搜索结果并展示为列表
 $("#list>tbody").on("click", function(e){ //结果列表事件监听
     if($(e.target).parent().parent().attr("m_id")){
         if($(e.target).hasClass("glyphicon-play")){
-            var dealTr;
             dealTr = $(e.target).parent().parent();
             playIndex = $(e.target).parent().parent().attr("index");
             top.playIndex = playIndex;

@@ -1,12 +1,13 @@
 var modeArr = ["glyphicon glyphicon-th-list", "glyphicon glyphicon-refresh", "glyphicon glyphicon glyphicon-random"];
 var modeindex = 0;
 var playList = [];
-var playIndex = getCookie("playIndex") ? Number(getCookie("playIndex")) : 0;
+var playIndex = 0;
 var playDuration = 0;
 var timer = null;  //播放器运行时
 
 if(getCookie("playList")){
     playList = JSON.parse(getCookie("playList"));
+    playIndex = getCookie("playIndex")!=undefined ? getCookie("playIndex") : 0;
     $("#info").text(playList[playIndex].artists+" - "+playList[playIndex].name);
     var data = `<dt>正在播放</dt>`;
     $("#asideList").html();
