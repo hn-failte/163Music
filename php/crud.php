@@ -96,7 +96,6 @@ function getSongs($list_id){ // 获取歌单歌曲
 function getLists($u_name){ // 获取用户歌单
     //http://127.0.0.1:8086/php/crud.php?action=gl&u_name=1
     $sql = "select list_id,list_name from lists where u_name=$u_name";
-    mysql_query($sql);
     $result = mysql_query($sql);
     $rows = [];
     while($row = mysql_fetch_assoc($result)){

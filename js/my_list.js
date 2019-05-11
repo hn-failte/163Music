@@ -1,7 +1,6 @@
 document.domain = document.domain;
 var playIndex=0;
 var playList = [];
-document.domain = document.domain;
 var user;
 
 $().ready(function(){
@@ -10,11 +9,11 @@ $().ready(function(){
 })
 
 function getUser(){
-    let user = top.getCookie("u_name");
-    console.log(user);
+    let u_name = top.getCookie("u_name");
+    console.log(u_name);
     
-    if(!user) top.document.getElementById("main").src = "/html/login-T.html";
-    return user;
+    if(!u_name) top.document.getElementById("main").src = "/html/login-T.html";
+    return u_name;
 }
 
 $(document).on("click", function(e){ //点击其他地方使列表隐藏
@@ -23,8 +22,10 @@ $(document).on("click", function(e){ //点击其他地方使列表隐藏
 })
 
 function getList(user) {
+    console.log(user);
+    
     $.ajax({
-        url: "http://10.36.133.110:8086/php/crud.php",
+        url: "/php/crud.php",
         type: "get",
         data: "action=gl&u_name="+user,
         dataType: "json",
@@ -43,14 +44,14 @@ $("#btn").click(function(){
         if(pass!=""){
             layer.close(index);
             $.ajax({
-                url: "http://10.36.133.110:8086/php/crud.php",
-                data: "action=cl&list_name="+pass+"&u_id=1",
+                url: "/php/crud.php",
+                data: "action=cl&list_name="+pass+"&u_name="+user,
                 type: "get",
                 dataType: "json",
                 success: function(res){
                     if(res.state==1){
                         layer.msg("添加成功", {icon: 1}, function(){
-                            getList();
+                            getList(user);
                         });
                     }
                     else{
@@ -80,25 +81,31 @@ $("#ul").on("click", function(e){
         if(dealUl.html()=="") listExtend(dealUl);
         else dealUl.toggle();
     }
-    else if($(e.target).attr("m_id"))  play($(e.target));
+    else if($(e.target).attr("m_id")){
+        playIndex = $(e.target).attr("index");
+        top.playIndex = playIndex;
+        top.playList = playList;
+        top.play(playIndex);
+    }
 })
 
 
 function listExtend(jqobj){
     $.ajax({
-        url: "http://10.36.133.110:8086/php/crud.php",
+        url: "/php/crud.php",
         type: "get",
         data: "action=gs&list_id="+jqobj.parent().attr("list_id")+"&u_name="+user,
         dataType: "json",
         success: function(res){
             var data = "";
+            playList = [];
             for(let i=0; i<res.length; i++){
-                // playList.push({
-                //     id: item['id'],
-                //     name: item['name'],
-                //     artists: item['artists'][0]['name']
+                playList.push({
+                    id: res[i]['m_id'],
+                    name: res[i]['m_name'],
+                    artists: res[i]["m_author"]
 
-                // });
+                });
                 data+=`<li m_id="${res[i]["m_id"]}" index="${i}">${res[i]["m_name"]} ${res[i]["m_author"]}</li>`;
             }
             jqobj.html(data);

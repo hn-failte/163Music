@@ -8,7 +8,7 @@ $(document).on("click", function(e){ //点击其他地方使列表隐藏
 })
 
 var li = "";
-$("#search").click(function(){
+$("#search").click(function(){ //获取搜索结果并展示为列表
     if($("#input").val()=="") return;
     li = "";
     $.ajax({
@@ -21,7 +21,7 @@ $("#search").click(function(){
             playList = [];
             for(let i=0;i<songs.length;i++){
                 let item = songs[i];
-                playList.push({
+                playList.push({ //暂存播放列表
                     id: item['id'],
                     name: item['name'],
                     artists: item['artists'][0]['name']
@@ -35,28 +35,28 @@ $("#search").click(function(){
                             <a href="javascript: void(0);" class="glyphicon glyphicon-plus text-primary" onclick="showList(${i})"></a></td>
                     </tr>`;
             }
-            $("#list>tbody").html(li);
+            $("#list>tbody").html(li); //显示结果列表
         }
     })
 })
 
-$("#list>tbody").on("click", function(e){
+$("#list>tbody").on("click", function(e){ //结果列表事件监听
     if($(e.target).parent().parent().attr("m_id")){
         if($(e.target).hasClass("glyphicon-play")){
             var dealTr;
             dealTr = $(e.target).parent().parent();
-            playIndex = $(e.target).parent().parent().attr("index")
+            playIndex = $(e.target).parent().parent().attr("index");
             top.playIndex = playIndex;
             top.playList = playList;
-            top.getChildData();
-            top.play(playIndex);
+            top.getChildData(); //与父框架交互
+            top.play(playIndex); //播放
         }
     }
 })
 
-function showList(index){
+function showList(index){ //添加歌单时显示我的歌单
     $.ajax({
-        url: "http://10.36.133.110:8086/php/crud.php",
+        url: "/php/crud.php",
         type: "get",
         data: "action=gl&u_id=1",
         dataType: "json",
@@ -82,10 +82,10 @@ function showList(index){
 }
 
 
-function addToList(list_id, index){
+function addToList(list_id, index){ //添加到歌单
     let song = playList[index];
     $.ajax({
-        url: "http://10.36.133.110:8086/php/crud.php",
+        url: "/php/crud.php",
         data: {"action": "as",
                 "list_id": list_id,
                 "u_id": 1,

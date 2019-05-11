@@ -1,11 +1,51 @@
 $("#main").css("height", window.innerHeight-91-80+"px");
 
-var iWindow=top.frames["main"];
-var iDocument=iWindow.document;
-
 document.domain = window.location.hostname;
 
-function getChildData(){
+
+$("li").mouseenter(function(){
+    $(this).find("a").css({
+        "color":"white",  
+        // "background": "url(../img/images/b2_03.jpg) no-repeat",
+        // "background-size": "20px 25px"
+        "background":"black"
+    });
+});
+
+$("li").mouseleave(function(){
+    $(this).find("a").css({
+        "color":"white",
+        "background":"#2D2D2D"
+    });
+
+});
+
+$(".btn").click(function(){
+    $("#main").attr("src", "/html/login-T.html");
+})
+$("#go_index").click(function(){
+    $("#main").attr("src", "/html/sj-home.html");
+})
+function goToLogin(){
+    $("#main")[0].src="/html/login-T.html";
+}
+$(".btn").mouseenter(function(){
+    $(".dropdown-menu").css("display","block");
+});
+$(".dropdown-menu").mouseleave(function(){
+    $(".dropdown-menu").css("display","none");
+});
+$(".dropdown").mouseenter(function(){
+    $(this).css("display","block");
+});
+$("#search").keydown(function(e){
+    if($("#search").val()=="") return;
+    if(e.keyCode==13){
+        $("#main")[0].src="/php/music_search.php?content="+$("#search").val();
+    }
+})
+
+function getChildData(){ //与子框架交互
     playIndex = top.playIndex;
     playList = top.playList;
     var data = `<dt>正在播放</dt>`;
@@ -15,7 +55,7 @@ function getChildData(){
         ${playList[i]['artists']} - ${playList[i]['name']}
                 </dd>`;
     }
-    $("#asideList").html(data);
+    $("#asideList").html(data); //显示正在播放列表
 }
 
 $("#go_my_list").click(function(){

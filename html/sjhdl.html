@@ -30,7 +30,7 @@
 
         <div id="form_container1">
             <br />
-            <form action="http://10.36.133.110:8086/php/login.php" method="post">
+            <form action="/php/login.php" method="post">
                 <input type="hidden" name="action" value="l">
                 <input type="text" class="form-control" placeholder="请输入手机号" id="login_number" name="u_name" />
                 <span class="success"></span>
@@ -79,7 +79,7 @@
     $("#login_btn").click(function () {
 
         $.ajax({
-            url: "http://10.36.133.110:8086/php/login.php",
+            url: "/php/login.php",
             data: {
                 "action": "l",
                 "u_name": $("#login_number").val(),
@@ -90,10 +90,11 @@
             success: function (res) {
                 if(res.state==1){
                     top.setCookie("u_name", $("#login_number").val(), 7);
-                    top.location.reload();
+                    layer.msg("登录成功", {icon: 1}, function(){
+                        top.location.reload();
+                    })
                 }
-                else layer.msg("登录失败", {icon: 1});
-
+                else layer.msg("登录失败", {icon: 2});
             }
 
 
