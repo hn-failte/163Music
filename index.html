@@ -79,7 +79,7 @@
 <script src="/js/music_bar.js"></script>
 <script src="/js/index.js"></script>
 <script>
-    $("li").mouseenter(function(){
+    $(".dropdown-menu>li").mouseenter(function(){
         $(this).find("a").css({
             "color":"white",  
             // "background": "url(../img/images/b2_03.jpg) no-repeat",
@@ -88,13 +88,14 @@
         });
     });
 
-    $("li").mouseleave(function(){
+    $(".dropdown-menu>li").mouseleave(function(){
         $(this).find("a").css({
             "color":"white",
-            "background":"#2D2D2D"
+            "background":"#2d2d2d"
         });
 
     });
+    
 
     $(".btn").click(function(){
         $("#main").attr("src", "/html/login-T.html");
