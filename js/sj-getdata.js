@@ -2,16 +2,17 @@ $.ajax({
     // url: "http://10.36.133.110:3000/playlist/detail",
     url: "http://10.36.133.110:3000/top/playlist/highquality",
     //limit: 获取的歌单个数
-    data: "limit=10&cat=华语",
+    data: "limit=8&cat=华语",
     dataType: "json",
     type: "get",
     success: function (res) {
         var data = "";
         var lists = res.playlists;
+        console.log(res)
         console.log(lists);
 
         var str = ``;
-        for(var j = 0; j < 8; j++){
+        for(var j = 0; j < lists.length; j++){
             str += `
                 
                 <div class="photoAj">

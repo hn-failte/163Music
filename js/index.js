@@ -2,8 +2,7 @@ $("#main").css("height", window.innerHeight-91-80+"px");
 
 document.domain = window.location.hostname;
 
-
-$("li").mouseenter(function(){
+$(".dropdown-menu>li").mouseenter(function(){
     $(this).find("a").css({
         "color":"white",  
         // "background": "url(../img/images/b2_03.jpg) no-repeat",
@@ -12,10 +11,10 @@ $("li").mouseenter(function(){
     });
 });
 
-$("li").mouseleave(function(){
+$(".dropdown-menu>li").mouseleave(function(){
     $(this).find("a").css({
         "color":"white",
-        "background":"#2D2D2D"
+        "background":"#2d2d2d"
     });
 
 });
@@ -44,7 +43,6 @@ $("#search").keydown(function(e){
         $("#main")[0].src="/php/music_search.php?content="+$("#search").val();
     }
 })
-
 function getChildData(){ //与子框架交互
     playIndex = top.playIndex;
     playList = top.playList;
