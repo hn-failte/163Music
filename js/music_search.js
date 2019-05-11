@@ -66,36 +66,6 @@ $("#list>tbody").on("click", function(e){ //结果列表事件监听
     }
 })
 
-// function showList(index, user){ //添加歌单时显示我的歌单
-//     $.ajax({
-//         url: "/php/crud.php",
-//         type: "get",
-//         data: "action=gl&u_name="+user,
-//         dataType: "json",
-//         success: function(res){
-//             var data="<ul>";
-//             for(let item in res){
-//                 data+=`<li class="my-list-li" list_id="${res[item]["list_id"]}" onclick="addToList(${res[item]["list_id"]}, ${index})">${res[item]["list_name"]}</li>`;
-//             }
-//             data+="</ul>";
-//             console.log(data);
-            
-//             layer.open({
-//                 title: ["添加到歌单"],
-//                 closeBtn: 1,
-//                 type: 0,
-//                 anim: 2,
-//                 move: false,
-//                 skin: 'layui-layer-rim', //加上边框
-//                 area: ['420px', '240px'], //宽高
-//                 content: data,
-//                 btn: []
-//               });
-//         }
-//     });
-// }
-
-
 function addToList(list_id, index){ //添加到歌单
     let song = playList[index];
     $.ajax({
