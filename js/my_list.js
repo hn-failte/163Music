@@ -8,6 +8,14 @@ $().ready(function(){
     if(user) getList(user);
 })
 
+//我的页面联动
+$(".dropdown").mouseenter(function(){
+    $(".dropdown-menu").show();
+})
+$(".dropdown-menu").mouseleave(function(){
+    $(".dropdown-menu").hide();
+})
+
 function getUser(){
     let u_name = top.getCookie("u_name");
     console.log(u_name);
@@ -39,7 +47,6 @@ function getList(user) {
                             <ul></ul>
                         </li>
                         `
-                // data+=`<li list_id="${res[item]["list_id"]}"><span class="glyphicon glyphicon-chevron-right"></span>${res[item]["list_name"]}<ul class="song_ul"></ul></li>`;
             }
             $("#ul").html(data);
             if($("#ul").html()!="") $("#ul>li").eq(0).click();

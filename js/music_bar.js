@@ -4,6 +4,7 @@ var playList = [];
 var playIndex = 0;
 var playDuration = 0;
 var timer = null;  //播放器运行时
+var tempobj = null;
 
 if(getCookie("playList")){
     playList = JSON.parse(getCookie("playList"));
@@ -20,7 +21,16 @@ if(getCookie("playList")){
     $("#asideList>dd").attr("class", "");
     $("#asideList>dd").eq(playIndex).addClass("glyphicon glyphicon-music");
 }
+//获取用户缓存
+var user = getUser();
 
+function getUser(){
+    let u_name = top.getCookie("u_name");
+    console.log(u_name);
+    
+    if(!u_name) top.document.getElementById("main").src = "/html/login-T.html";
+    return u_name;
+}
 function play(index){
     if(timer) timeStop();
     playIndex=Number(index);
@@ -62,17 +72,20 @@ $(".audio>.glyphicon-align-justify").click(function(){
     $("#asideList").show();
 });
 
-$(".audio>.glyphicon-plus").click(function(){
+$(".audio>.glyphicon-plus").click(showList);
+
+function showList(obj, flag) { //flag: 是否是子框架的添加
+    if(flag) tempobj = obj; // tempobj: 存储子框架的歌曲信息
     if(playList.length==0) return;
     $.ajax({
         url: "/php/crud.php",
         type: "get",
-        data: "action=gl&u_id=1",
+        data: "action=gl&u_name="+user,
         dataType: "json",
         success: function(res){
             var data="<ul>";
             for(let item in res){
-                data+=`<li class="my-list-li" list_id="${res[item]["list_id"]}" onclick="addToList(${res[item]["list_id"]})">${res[item]["list_name"]}</li>`;
+                data+=`<li class="my-list-li" list_id="${res[item]["list_id"]}" onclick="addToList(${res[item]["list_id"]}, ${flag})">${res[item]["list_name"]}</li>`;
             }
             data+="</ul>";
             layer.open({
@@ -85,18 +98,21 @@ $(".audio>.glyphicon-plus").click(function(){
                 area: ['420px', '240px'], //宽高
                 content: data,
                 btn: []
-              });
+                });
         }
     });
-});
+}
 
-function addToList(list_id){
-    let song = playList[playIndex];
+function addToList(list_id, flag){ //歌曲添加到表单   flag：是否是子框架的添加
+    let song = flag ? tempobj :  playList[playIndex];
+    console.log(song);
+    
     $.ajax({
         url: "/php/crud.php",
-        data: {"action": "as",
+        data: {
+                "action": "as",
                 "list_id": list_id,
-                "u_id": 1,
+                "u_name": user,
                 "m_id": song.id,
                 "m_name": song.name,
                 "m_author": song.artists
