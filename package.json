@@ -1,5 +1,5 @@
 {
-  "name": "NeteaseCloudMusicApi",
+  "name": "163MUSIC",
   "version": "3.9.0",
   "description": "网易云音乐 NodeJS 版 API",
   "scripts": {

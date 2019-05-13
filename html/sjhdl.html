@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>登录界面</title>
     <link href="../css/sjhdl.css" rel="stylesheet" />
     <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/login.css">
@@ -22,12 +22,7 @@
             <div class="big-top-right">×</div>
         </div>
     </div>
-
-
-
     <div id="login_container">
-
-
         <div id="form_container1">
             <br />
             <form action="/php/login.php" method="post">
@@ -52,16 +47,17 @@
             </form>
         </div>
     </div>
-
     <br><br><br><br>
     <div class="big-bottom">
         <div class="big-bottom-left"><a href="../html/login-T.html">
-                <其他登录方式</a> </div> <div class="big-bottom-right"><a href="../html/zc.html">没有账号？免费注册></a></div>
+                &lt;其他登录方式</a>
+        </div>
+        <div class="big-bottom-right">
+            <a href="../html/zc.html">没有账号？免费注册&gt;</a>
+        </div>
     </div>
-
 </body>
 <script type="text/javascript">
-
     document.domain = document.domain;
     var clock = '';
     var nums = 30;
@@ -73,11 +69,7 @@
         btn.value = '重新获取（' + nums + '）';
         clock = setInterval(doLoop, 1000); //一秒执行一次
     }
-
-    
-
     $("#login_btn").click(function () {
-
         $.ajax({
             url: "/php/login.php",
             data: {
@@ -88,56 +80,47 @@
             type: "post",
             dataType: "json",
             success: function (res) {
-                if(res.state==1){
+                if (res.state == 1) {
                     top.setCookie("u_name", $("#login_number").val(), 7);
-                    layer.msg("登录成功", {icon: 1}, function(){
+                    layer.msg("登录成功", {
+                        icon: 1
+                    }, function () {
                         top.location.reload();
                     })
-                }
-                else layer.msg("登录失败", {icon: 2});
+                } else layer.msg("登录失败", {
+                    icon: 2
+                });
             }
-
-
         })
     })
     var login_number = document.querySelector('#login_number');
     console.log(login_number)
-    login_number.onblur = function(){
+    login_number.onblur = function () {
         var reg = /^1[1234567890]\d{9}$/
         var test = reg.test(this.value);
         console.log(test);
-        if(test){
+        if (test) {
             this.nextElementSibling.innerHTML = "验证成功";
             this.nextElementSibling.style.color = "green";
-        }else{
+        } else {
             this.nextElementSibling.innerHTML = "验证失败";
             this.nextElementSibling.style.color = "red";
         }
     }
-
-
     var login_number = document.querySelector('#login_password');
     console.log(login_password)
-    login_password.onblur = function(){
+    login_password.onblur = function () {
         var reg = /^\w{6,18}$/
         var test = reg.test(this.value);
         console.log(test);
-        if(test){
+        if (test) {
             this.nextElementSibling.innerHTML = "验证成功";
             this.nextElementSibling.style.color = "green";
-        }else{
+        } else {
             this.nextElementSibling.innerHTML = "验证失败";
             this.nextElementSibling.style.color = "red";
         }
     }
-   
 </script>
-
-
-
-
-
-
-</body>
 
 </html>

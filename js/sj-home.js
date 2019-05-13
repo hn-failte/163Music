@@ -1,5 +1,4 @@
-
-var home = (function(){
+var home = (function () {
     var $ajaxDoc = document.querySelector('.ajaxDoc');
     var $todayWeek = document.querySelector('.todayWeek');
     var $todayDay = document.querySelector('.todayDay');
@@ -48,7 +47,7 @@ var home = (function(){
                 url: '../json/sj-json.json'
             }).then(data => {
                 var str = ``;
-                for(var i = 0; i < 3; i++){
+                for (var i = 0; i < 3; i++) {
                     str += `
                         <li class="photoAj">
                             <img class="imgph" src="${data[i].src}">
@@ -64,7 +63,7 @@ var home = (function(){
                 $reco2.innerHTML = str;
                 var $photoAj = $reco2.children;
                 // console.log($photoAj)
-                for(var i = 0; i < 3; i++){
+                for (var i = 0; i < 3; i++) {
                     $photoAj[i].style.float = 'left';
                     $photoAj[i].style.width = "140px";
                 };
@@ -75,7 +74,7 @@ var home = (function(){
                 url: '../json/sj-json.json'
             }).then(data => {
                 var str = ``;
-                for(var j = 0; j < 4; j++){
+                for (var j = 0; j < 4; j++) {
                     str += `
                         <div class="photoAj">
                             <img class="imgph" src="${data[j].src}">
@@ -90,7 +89,7 @@ var home = (function(){
                 };
                 $newSing.innerHTML = str;
                 var $photoAj = $newSing.children;
-                for(var i = 0; i < $photoAj.length; i++){
+                for (var i = 0; i < $photoAj.length; i++) {
                     $photoAj[i].style.float = 'left';
                     $photoAj[i].style.width = "140px";
                 };
@@ -120,7 +119,7 @@ var home = (function(){
                 url: '../json/sj-singer.json'
             }).then(data => {
                 var str = ``;
-                for(var i = 0; i < data.length; i++){
+                for (var i = 0; i < data.length; i++) {
                     str += `
                     <div class="anchoBox">
                         <img class="anchoImg" src="${data[i].src}">
@@ -155,12 +154,12 @@ var home = (function(){
                 $rankDoc2.innerHTML = str;
                 $rankDoc3.innerHTML = str;
 
-                $('.ranking').on("mouseenter",".song",function(){
+                $('.ranking').on("mouseenter", ".song", function () {
                     this.children[2].style.display = 'block';
                     this.children[3].style.display = 'block';
                     this.children[4].style.display = 'block';
                 })
-                $('.ranking').on("mouseleave",".song",function(){
+                $('.ranking').on("mouseleave", ".song", function () {
                     this.children[2].style.display = 'none';
                     this.children[3].style.display = 'none';
                     this.children[4].style.display = 'none';
@@ -170,42 +169,42 @@ var home = (function(){
         event() {
 
         },
-        backTop(){
-            $backTop.onclick = function(){
+        backTop() {
+            $backTop.onclick = function () {
                 document.documentElement.scrollTop = 0;
             }
-            window.onscroll = function(){
-                if(document.documentElement.scrollTop == 0){
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop == 0) {
                     $backTop.style.display = 'none';
                 }
-                if(document.documentElement.scrollTop > 0){
+                if (document.documentElement.scrollTop > 0) {
                     $backTop.style.display = 'block';
                 }
             }
         },
-        getDay(){
-            var mydate=new Date();
-            var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+        getDay() {
+            var mydate = new Date();
+            var weekday = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
             $todayWeek.innerText = weekday[mydate.getDay()];
             $todayDay.innerText = mydate.getDate();
         },
-        sendAjax(param){
-            var promise = new Promise(function(resolve, reject){
+        sendAjax(param) {
+            var promise = new Promise(function (resolve, reject) {
                 var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function(){
-                    if(this.readyState == 4 && this.status == 200){
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
                         resolve(JSON.parse(this.responseText));
                     }
                 }
-                if(param.method == 'get' && param.data){
+                if (param.method == 'get' && param.data) {
                     xhr.open(param.mathod, param.url + '?' + param.data, true);
-                }else{
+                } else {
                     xhr.open(param.method, param.url, true);
                 }
-                if(param.method == 'post'){
+                if (param.method == 'post') {
                     xhr.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
                     xhr.send(param.data || '');
-                }else{
+                } else {
                     xhr.send(null);
                 }
             })

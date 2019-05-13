@@ -7,12 +7,12 @@ function move(ele, attr, target, options) {
         ...options
     }
     let $box = ele;
-    if(typeof ele == 'string') {
+    if (typeof ele == 'string') {
         $box = $(ele);
     }
     clearInterval($box.timer);
     let init = parseFloat(getStyle($box, attr));
-    if(attr == 'opacity') {
+    if (attr == 'opacity') {
         init *= 100;
     }
     // (目标值 - 初始值) / 次 = (时间 / 频率)
@@ -26,7 +26,7 @@ function move(ele, attr, target, options) {
             if (typeof __default.callback == 'function')
                 __default.callback($box);
         }
-        if(attr == 'opacity') {
+        if (attr == 'opacity') {
             $box.style[attr] = init / 100
         } else {
             $box.style[attr] = init + 'px';
@@ -34,10 +34,10 @@ function move(ele, attr, target, options) {
     }, 10)
 }
 
-function getStyle(ele,attr){
-	if(window.getComputedStyle){
-		return window.getComputedStyle(ele,null)[attr];
-	}else{
-		return ele.currentStyle[attr];
-	}
+function getStyle(ele, attr) {
+    if (window.getComputedStyle) {
+        return window.getComputedStyle(ele, null)[attr];
+    } else {
+        return ele.currentStyle[attr];
+    }
 }

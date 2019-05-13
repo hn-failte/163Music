@@ -1,9 +1,8 @@
 <?php
-if(isset($_GET["id"])){
+if (isset($_GET["id"])) {
     $id = $_GET["id"];
     echo "<script>var id=$id;</script>";
-}
-else{
+} else {
     echo "<script>location.href='/html/music_search.html'</script>";
     die();
 }
@@ -11,6 +10,7 @@ else{
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,7 @@ else{
     <link rel="stylesheet" href="../css/music_bar.css">
     <title>Document</title>
 </head>
+
 <body>
     <img id="cover" src="" width="200" height="200">
     <h2 id="name"></h2>
@@ -28,4 +29,5 @@ else{
     <ul id="ul"></ul>
 </body>
 <script src="/js/list_detail.js"></script>
+
 </html>

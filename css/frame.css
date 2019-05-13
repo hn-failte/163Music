@@ -1,51 +1,62 @@
 @charset "utf-8";
-body{
+
+body {
     overflow: hidden;
 }
-.head{
+
+.head {
     height: 91px;
     background-color: #252525;
 }
-.head .nav{
+
+.head .nav {
     height: 91px;
     background-color: #252525;
 }
-.head .nav .div1{
-    height: 91px;  
+
+.head .nav .div1 {
+    height: 91px;
     line-height: 91px;
     width: 280px;
     float: left;
 }
-.head .nav .div1 img{
+
+.head .nav .div1 img {
     margin-left: 40px;
 }
-.head .nav .div2{
+
+.head .nav .div2 {
     width: 540px;
     height: 91px;
     float: left;
 }
-.head .nav .div2 ul li{
+
+.head .nav .div2 ul li {
     float: left;
     list-style: none;
     line-height: 91px;
 }
-.head .nav .div2 ul li a{
+
+.head .nav .div2 ul li a {
     text-decoration: none;
     color: white;
     display: block;
     padding-left: 15px;
     padding-right: 15px;
 }
-.head .nav .div2 ul li a:hover{
+
+.head .nav .div2 ul li a:hover {
     background-color: black;
 }
-.head .nav .div3{
+
+.head .nav .div3 {
     float: left;
     height: 91px;
     width: 360px;
     position: relative;
 }
-.head .nav .div3 .text{
+
+.head .nav .div3 .text {
     height: 30px;
     width: 160px;
     margin-top: 35px;
@@ -54,7 +65,8 @@ body{
     border: none;
     outline: none;
 }
-.head .nav .div3 .czzzx{
+
+.head .nav .div3 .czzzx {
     border-radius: 20px;
     border: 1px solid #515151;
     width: 90px;
@@ -67,34 +79,40 @@ body{
     color: white;
     cursor: pointer;
 }
-.head .nav .div3 .dropdown{
+
+.head .nav .div3 .dropdown {
     position: absolute;
     left: 300px;
     top: 34px;
     border: none;
 }
-.head .nav .div3 .dropdown .btn{
+
+.head .nav .div3 .dropdown .btn {
     background-color: #252525;
     border: none;
     color: gray;
     outline: none;
 }
-.head .nav .div3 img{
+
+.head .nav .div3 img {
     position: absolute;
     top: 40px;
     left: 10px;
 }
-.head .nav .div3 .dropdown-menu{
+
+.head .nav .div3 .dropdown-menu {
     width: 45px;
 }
-.head .nav .div3 .dropdown ul{
+
+.head .nav .div3 .dropdown ul {
     background-color: #2D2D2D;
 }
-.head .nav .div3 .dropdown ul li a{
+
+.head .nav .div3 .dropdown ul li a {
     color: white;
 }
 
-#main{
+#main {
     position: absolute;
     top: 91px;
     left: 0px;

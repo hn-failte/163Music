@@ -60,7 +60,7 @@ else if($action=="dl") { //删除用户歌单
 else die();
 
 function connect(){
-    mysql_connect("10.36.133.110", "madmin", '163music');
+    mysql_connect("127.0.0.1", "madmin", '163music');
     mysql_query("use 163music");
 }
 
@@ -132,4 +132,3 @@ function deleteList($u_name, $list_id){ // 删除用户歌单
     if($result>0) echo json_encode(["state" => 1]);
     else echo json_encode(["state" => 0]);
 }
-?>

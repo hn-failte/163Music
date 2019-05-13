@@ -1,59 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/music_bar.css" />
-    <link rel="stylesheet" href="../css/my_list.css"  />
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/my_list.css" />
     <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" />
     <script src="../lib/jquery.js"></script>
     <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../lib/layer/layer.js"></script>
     <title>Document</title>
-
 </head>
-<body>
-    <div class="mypage">
-        <div class="muisc-list">
-            <div class="mywon-list">
-                <span class="myown">
-                    我的收藏
-                    <button id="btn">创建歌单&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span></button>
-                </span>
-            </div>
-            <ul id="ul" class="text-primary"></ul>
-        </div>
-        <div class="music-data">
-            <div class="data-img">
-                <img src="../img/sj-img/mi.jpg" height="120px" width="120px"/>
-            </div>
-            <div class="data-text">
-                <span>歌单名<a href="#">编辑歌单</a></span>
-                <p>时间</p>
-                <p>描述文字</p>
-                <button>播放</button><button>+</button>
-                <a>收藏 </a>
-                <a>分享 </a>
-                <a>下载 </a>
-                <a>评论 </a>
-            </div>
-        </div>
-        <div class="data-list">
-            <div class="data-div">歌曲列表</div>
-            <ul id="songs"></ul>
-        </div>
-        <div class="data-node">
-            <h4>热门评论</h4>
-            <div class="node-show"></div>
-            <form action="#" method="post" >
-                <!-- <p>用户名<input type="text" name="username"></p> -->
-                <p><textarea name="content" ></textarea></p>
-                <p><input type="submit" value="留言"></p>
-            </form>
-        </div>
-    </div>
 
+<body>
+    <div class="container">
+        <table id="main" class="table table-bordered table-condensed table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="half-left">我的歌单&nbsp;&nbsp;<button id="btn">添加歌单&nbsp;<span
+                                class="glyphicon glyphicon-plus"></span></button></th>
+                    <th class="half-right">
+                        <img src="../img/sj-img/mi.jpg" alt="">
+                        <div>
+                            <h2>歌单名&nbsp;<span class="glyphicon glyphicon-pencil"></span></h2>
+                            <p>时间</p>
+                            <p>描述文字</p>
+                            <p>
+                                <button onclick="toParent(0)">播放全部&nbsp;<span
+                                        class="glyphicon glyphicon-play"></span></button>
+                                <button onclick="replaceList()">添加到播放列表&nbsp;<span
+                                        class="glyphicon glyphicon-plus"></span></button>
+                            </p>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="half-left">
+                        <ul class="left-ul">
+                            <!-- <li>
+                                <div class="list-pic"></div>
+                                <div class="list-content">
+                                    <p class="list-name">歌单名歌单名歌单名歌单名歌单名歌单名歌单名歌单名歌单名</p>
+                                    <p class="songs-number">歌曲数</p>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </td>
+                    <td class="half-right">
+                        <dl id="song-list">
+                            <dt>歌曲列表</dt>
+                            <!-- <dd>
+                                <p class="operation">
+                                    <span class="glyphicon glyphicon-play">&nbsp;</span>
+                                    <span class="glyphicon glyphicon-trash">&nbsp;</span>
+                                    <span class="glyphicon glyphicon-download-alt"></span>
+                                </p>
+                                <p class="player">歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手</p>
+                                <p class="song-name">歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名歌曲名</p>
+                            </dd> -->
+                        </dl>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 <script src="../js/my_list.js"></script>
+<script src="../lib/cookie.js"></script>
+<script src="../lib/download.js"></script>
+
 </html>

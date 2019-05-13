@@ -1,40 +1,37 @@
-
-.big .big-top{
-    width: 560px;
-    height: 57px;
-    line-height: 57px;
-    background-color: #2F2F2F;
+.big .big-top {
+	width: 560px;
+	height: 57px;
+	line-height: 57px;
+	background-color: #2F2F2F;
 	color: white;
 	position: relative;
 }
-.big .big-top .big-top-left{
-    float: left;
-    margin-left: 20px;
-}
-.big .big-top .big-top-right{
-    float: right;
-    font-size: 24px;
-    color: darkgray;
-    margin-right: 20px;
+
+.big .big-top .big-top-left {
+	float: left;
+	margin-left: 20px;
 }
 
-
-
-
-
-
-.big-bottom{
-    width: 560px;
-    height: 50px;
-    background-color: #F7F7F7;
-    line-height: 50px;
-    border-top: 1px solid gray; 
+.big .big-top .big-top-right {
+	float: right;
+	font-size: 24px;
+	color: darkgray;
+	margin-right: 20px;
 }
-.big-bottom .big-bottom-left{
-    float: left;
-    line-height: 72px;
-    margin-left: 30px;
-    text-decoration: none;
+
+.big-bottom {
+	width: 560px;
+	height: 50px;
+	background-color: #F7F7F7;
+	line-height: 50px;
+	border-top: 1px solid gray;
+}
+
+.big-bottom .big-bottom-left {
+	float: left;
+	line-height: 72px;
+	margin-left: 30px;
+	text-decoration: none;
 }
 
 
@@ -67,27 +64,31 @@
 	cursor: pointer;
 }
 
-#login_container,#regist_container {
+#login_container,
+#regist_container {
 	width: 360px;
 	text-align: center;
 	margin-top: 30px;
 }
-#form_container1 .span1{
-    margin-left: -290px;
-    font-size: 16px;
+
+#form_container1 .span1 {
+	margin-left: -290px;
+	font-size: 16px;
 }
-#form_container1 .span2{
-    margin-left: -305px;
-    font-size: 16px;
+
+#form_container1 .span2 {
+	margin-left: -305px;
+	font-size: 16px;
 }
 
 
-#form_container1 .success{
+#form_container1 .success {
 	position: absolute;
 	left: 840px;
 	top: 135px;
 }
-#form_container1 .fail{
+
+#form_container1 .fail {
 	position: absolute;
 	left: 840px;
 	top: 238px;
@@ -124,22 +125,23 @@
 
 
 /*获取验证码*/
-#getVCode{
-	width:125px;
+#getVCode {
+	width: 125px;
 	height: 40px;
 	border-radius: 0;
 	margin-top: 6px;
 	float: right;
 }
+
 /*登陆按钮*/
 #login_btn {
 	float: left;
 	width: 360px;
 	height: 40px;
-    margin-top: 30px;
-    background-color: #2F7DCB;
-    border-radius: 5px;
-    border: none;
+	margin-top: 30px;
+	background-color: #2F7DCB;
+	border-radius: 5px;
+	border: none;
 }
 
 /*自动登录，找回密码*/

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -14,6 +15,7 @@
     <script src="/lib/layer/layer.js"></script>
     <title>163Music</title>
 </head>
+
 <body>
     <!-- 导航栏开始 -->
     <div class="head">
@@ -39,17 +41,18 @@
                 <img src="/img/images/a_09.jpg" />
 
                 <div class="dropdown">
-                    <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">
-                      登录
-                      <span class="caret"></span>
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                        aria-haspopup="true" aria-expanded="true">
+                        登录
+                        <span class="caret"></span>
                     </button>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li class="li1"><a href="javascript:void(0)" onclick="goToLogin()">手机号登录</a></li>
-                      <li class="li2"><a href="javascript:void(0)" onclick="goToLogin()">微信登录</a></li>
-                      <li class="li3"><a href="javascript:void(0)" onclick="goToLogin()">QQ登录</a></li>
-                      <li class="li4"><a href="javascript:void(0)" onclick="goToLogin()">新浪微博登录</a></li>
-                      <li class="li5"><a href="javascript:void(0)" onclick="goToLogin()">网易邮箱账号登录</a></li>
+                        <li class="li1"><a href="javascript:void(0)" onclick="goToLogin()">手机号登录</a></li>
+                        <li class="li2"><a href="javascript:void(0)" onclick="goToLogin()">微信登录</a></li>
+                        <li class="li3"><a href="javascript:void(0)" onclick="goToLogin()">QQ登录</a></li>
+                        <li class="li4"><a href="javascript:void(0)" onclick="goToLogin()">新浪微博登录</a></li>
+                        <li class="li5"><a href="javascript:void(0)" onclick="goToLogin()">网易邮箱账号登录</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,14 +66,16 @@
 
     <!-- 播放层开始 -->
     <div class="audio">
-        <p id="info" class="text-primary">  -------- </p><!-- 歌曲信息 -->
+        <p id="info" class="text-primary"> -------- </p><!-- 歌曲信息 -->
         <audio id="audio" src="" controls="controls"></audio><!-- 主体控制标签 -->
         <button class="glyphicon glyphicon-backward"></button><!-- 上一首 -->
         <button id="playMode" class="glyphicon glyphicon-th-list" mode="0"></button><!-- 播放模式 -->
         <button id="addToList" class="glyphicon glyphicon-plus"></button><!-- 添加，触发我的歌单列表 -->
         <button class="glyphicon glyphicon-forward"></button><!-- 下一首 -->
         <button id="playingList" class="glyphicon glyphicon-align-justify"></button><!-- 正在播放，触发正在播放列表 -->
-        <dl id="asideList" class=""><dt>正在播放</dt></dl><!-- 正在播放列表 -->
+        <dl id="asideList" class="">
+            <dt>正在播放</dt>
+        </dl><!-- 正在播放列表 -->
     </div>
     <!-- 播放层结束 -->
 
@@ -78,4 +83,5 @@
 <script src="/lib/cookie.js"></script>
 <script src="/js/music_bar.js"></script>
 <script src="/js/index.js"></script>
+
 </html>

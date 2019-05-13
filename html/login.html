@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="../lib/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/basic.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
     <title>login</title>
 </head>
+
 <body>
     <div id="plane">
         <header class="log-header">
@@ -53,7 +55,8 @@
                         </li>
                         <li>
                             <p>设置密码</p>
-                            <input type="text" value="设置登录密码，不少于6位" class="popover-body-input" id="popover-inputpassword">
+                            <input type="text" value="设置登录密码，不少于6位" class="popover-body-input"
+                                id="popover-inputpassword">
                         </li>
                         <li>
                             <button class="popover-body-input3" id="toNext">下一步</button>
@@ -82,11 +85,11 @@
                             <input type="text" value="输入密码" class="popover-body-input" id="popover-password">
                         </li>
                         <li>
-                            <input type=button value="登录" class="popover-body-input3" id="inputLog">
+                            <input type="button" value="登录" class="popover-body-input3" id="inputLog">
                         </li>
                     </ul>
                     <div class="popover-body-auto1">
-                        <input type="checkbox" value="">自动登录</input>
+                        <input type="checkbox" value="" />自动登录
                     </div>
                     <div class="popover-body-auto2">忘记密码？</div>
                 </div>
@@ -103,7 +106,7 @@
             </div>
             <div class="popover-body">
                 <div class="popover-body-main">
-                    <div class="popover-body-verify" >请输入验证码</div>
+                    <div class="popover-body-verify">请输入验证码</div>
                     <div class="popover-body-verify" id="verifyShow"></div>
                     <input type="text" class="popover-body-verify" id="verifyIn">
                     <div class="popover-body-verify" id="verifyRefresh">刷新</div>
@@ -128,23 +131,23 @@
             </div>
         </div>
     </div>
-<script>
-console.log($("#logButton"));
-$("#logButton").click(function(){
-    alert(2);
-    $("#popoverOne").show();
-});
-$("#btnLogin").click(function(){
-    alert(2);
-    $("#popoverThr").show();
-    $("#popoverOne").hide();
-});
-$("#btnRegister").click(function(){
-    alert(2);
-    $("#popoverTow").show();
-    $("#popoverOne").hide();
-});
-
-</script>
+    <script>
+        console.log($("#logButton"));
+        $("#logButton").click(function () {
+            alert(2);
+            $("#popoverOne").show();
+        });
+        $("#btnLogin").click(function () {
+            alert(2);
+            $("#popoverThr").show();
+            $("#popoverOne").hide();
+        });
+        $("#btnRegister").click(function () {
+            alert(2);
+            $("#popoverTow").show();
+            $("#popoverOne").hide();
+        });
+    </script>
 </body>
+
 </html>

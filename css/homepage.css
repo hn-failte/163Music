@@ -1,54 +1,65 @@
-@charset "utf-8"; 
-.head{
+@charset "utf-8";
+
+.head {
     height: 91px;
     background-color: #252525;
 }
-.head .nav{
+
+.head .nav {
     height: 91px;
 }
-.head .nav .div1{
-    height: 91px;  
+
+.head .nav .div1 {
+    height: 91px;
     line-height: 91px;
     width: 280px;
     float: left;
 }
-.head .nav .div1 img{
+
+.head .nav .div1 img {
     margin-left: 55px;
 }
-.head .nav .div2{
+
+.head .nav .div2 {
     width: 540px;
     height: 91px;
     float: left;
 }
-.head .nav .div2 ul li{
+
+.head .nav .div2 ul li {
     float: left;
     list-style: none;
     line-height: 91px;
 }
-.head .nav .div2 ul li a{
+
+.head .nav .div2 ul li a {
     text-decoration: none;
     color: white;
     display: block;
     padding-left: 15px;
     padding-right: 15px;
 }
-.head .nav .div2 ul li a:hover{
+
+.head .nav .div2 ul li a:hover {
     background-color: black;
 }
-.head .nav .div3{
+
+.head .nav .div3 {
     float: left;
     height: 91px;
     width: 360px;
     position: relative;
 }
-.head .nav .div3 .text{
+
+.head .nav .div3 .text {
     height: 30px;
     margin-top: 35px;
     border-radius: 20px;
     border: none;
     outline: none;
 }
-.head .nav .div3 .czzzx{
+
+.head .nav .div3 .czzzx {
     border-radius: 20px;
     border: 1px solid #515151;
     width: 90px;
@@ -58,164 +69,192 @@
     position: absolute;
     left: 200px;
     top: 39px;
-    color: white;   
+    color: white;
 }
-.head .nav .div3 .dropdown{
+
+.head .nav .div3 .dropdown {
     position: absolute;
     left: 300px;
     top: 34px;
     border: none;
 }
-.head .nav .div3 .dropdown .btn{
+
+.head .nav .div3 .dropdown .btn {
     background-color: #252525;
     border: none;
     color: gray;
     outline: none;
 }
-.head .nav .div3 img{
+
+.head .nav .div3 img {
     position: absolute;
     top: 40px;
     left: 10px;
 }
-.head .nav .div3 .dropdown-menu{
+
+.head .nav .div3 .dropdown-menu {
     width: 50px;
 }
-.head .nav .div3 .dropdown ul{
+
+.head .nav .div3 .dropdown ul {
     background-color: #2D2D2D;
 }
-.head .nav .div3 .dropdown ul li a{
+
+.head .nav .div3 .dropdown ul li a {
     color: white;
 }
-.head .nav .div3 .dropdown ul .li1{
+
+.head .nav .div3 .dropdown ul .li1 {
     background: url(../img/images/b2_03.jpg) no-repeat;
     background-size: 20px 25px;
 }
-.head .nav .div3 .dropdown ul .li2{
+
+.head .nav .div3 .dropdown ul .li2 {
     background: url(../img/images/b2_07.jpg) no-repeat;
     background-size: 20px 25px;
 }
-.head .nav .div3 .dropdown ul .li3{
+
+.head .nav .div3 .dropdown ul .li3 {
     background: url(../img/images/b2_10.jpg) no-repeat;
     background-size: 20px 25px;
 }
-.head .nav .div3 .dropdown ul .li4{
+
+.head .nav .div3 .dropdown ul .li4 {
     background: url(../img/images/b2_14.jpg) no-repeat;
     background-size: 20px 25px;
 }
-.head .nav .div3 .dropdown ul .li5{
+
+.head .nav .div3 .dropdown ul .li5 {
     background: url(../img/images/b2_18.jpg) no-repeat;
     background-size: 20px 25px;
-} 
+}
 
 
-.myhome{
-    width:100%;
-    height:700px;
-    background:#eeeeee;
+.myhome {
+    width: 100%;
+    height: 700px;
+    background: #eeeeee;
     border-top: 5px solid red;
 }
-.myhome-page{
-    width:980px;
-    height:600px;
-    margin:0 auto;
-    background:#ffffff;
+
+.myhome-page {
+    width: 980px;
+    height: 600px;
+    margin: 0 auto;
+    background: #ffffff;
 }
-.homepage{
-    width:100%;
-    height:190px;
+
+.homepage {
+    width: 100%;
+    height: 190px;
     padding-right: 40px;
-    padding-top:40px;
+    padding-top: 40px;
     position: relative;
 }
-.homepage-img{
-    position:absolute;
-    top:40px;
-    left:40px;
+
+.homepage-img {
+    position: absolute;
+    top: 40px;
+    left: 40px;
 }
-.homepage-nav{
-    width:100%;
-    height:60px;
+
+.homepage-nav {
+    width: 100%;
+    height: 60px;
     padding-left: 40px;
-    padding-top:20px;
-    font-size:20px;
+    padding-top: 20px;
+    font-size: 20px;
     border-bottom: 2px solid red;
 }
-.page-usename{
-    float:right;
-    width:700px;
-    height:40px;
+
+.page-usename {
+    float: right;
+    width: 700px;
+    height: 40px;
     line-height: 30px;
     position: relative;
     border-bottom: 1px solid #ccc;
 }
-.page-usename b{
-    font-size:28px;
+
+.page-usename b {
+    font-size: 28px;
 }
-.page-usename span{
-    font-size:16px;
+
+.page-usename span {
+    font-size: 16px;
 }
-.page-usename button{
-    font-size:14px;
-    width:100px;
-    height:30px;
+
+.page-usename button {
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
     line-height: 0px;
     position: absolute;
-    left:500px;
+    left: 500px;
 }
-.username-span1{
+
+.username-span1 {
     position: absolute;
     text-align: center;
-    width:60px;
-    height:40px;
+    width: 60px;
+    height: 40px;
     border-left: 1px solid #ccc;
-    left:250px;
-    top:80px;
+    left: 250px;
+    top: 80px;
 }
-.username-span2{
+
+.username-span2 {
     position: absolute;
     text-align: center;
-    width:60px;
-    height:40px;
+    width: 60px;
+    height: 40px;
     border-left: 1px solid #ccc;
-    left:320px;
-    top:80px;
+    left: 320px;
+    top: 80px;
 }
-.username-span3{
+
+.username-span3 {
     position: absolute;
     text-align: center;
-    width:60px;
-    height:40px;
+    width: 60px;
+    height: 40px;
     border-left: 1px solid #ccc;
-    left:390px;
-    top:80px;
+    left: 390px;
+    top: 80px;
 }
-.username-address{
+
+.username-address {
     position: absolute;
-    height:40px;
-    left:250px;
-    top:140px;
+    height: 40px;
+    left: 250px;
+    top: 140px;
 }
-.username-social{
+
+.username-social {
     position: absolute;
-    height:40px;
-    left:250px;
-    top:170px;
+    height: 40px;
+    left: 250px;
+    top: 170px;
 }
-.homepage-show{
-    width:100%;
-    height:400px;
+
+.homepage-show {
+    width: 100%;
+    height: 400px;
 }
-.homepage-show img{
-    margin-left:40px;
-    margin-top:30px;
+
+.homepage-show img {
+    margin-left: 40px;
+    margin-top: 30px;
 }
-.di{
+
+.di {
     height: 67px;
     background: #333;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
-.player{
+
+.player {
     height: 67px;
 }

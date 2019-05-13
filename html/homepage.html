@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="../css/music_bar.css" />
-        <link rel="stylesheet" href="../css/homepage.css"  />
-        <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" />
-        <script src="../lib/jquery.js"></script>
-        <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-        <script src="../lib/layer/layer.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/music_bar.css" />
+    <link rel="stylesheet" href="../css/homepage.css" />
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../lib/layer/layer.js"></script>
     <title>homepage</title>
 </head>
+
 <body>
     <div class="head">
         <div class="nav">
@@ -36,10 +38,11 @@
                     创作者中心
                 </div>
                 <img src="../img/images/a_09.jpg" />
-        
+
                 <div class="dropdown">
-                    <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                         UserName
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        UserName
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -52,7 +55,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     <div class="myhome">
         <div class="myhome-page">
             <div class="homepage">
@@ -60,9 +63,15 @@
                 <div class="page-usename">
                     <b>UserName </b> <span> 1</span><button>编辑个人资料</button>
                 </div>
-                <span class="username-span1"><p>0</p>动态</span>
-                <span class="username-span2"><p>0</p>关注</span>
-                <span class="username-span3"><p>0</p>粉丝</span>
+                <span class="username-span1">
+                    <p>0</p>动态
+                </span>
+                <span class="username-span2">
+                    <p>0</p>关注
+                </span>
+                <span class="username-span3">
+                    <p>0</p>粉丝
+                </span>
                 <div class="username-address"><span>所在城市：</span><span> 省 </span><span> 市</span></div>
                 <div class="username-social"><span>社交网络：</span><span></span></div>
             </div>
@@ -70,18 +79,18 @@
                 我创建的歌单<span>(2)</span>
             </div>
             <div class="homepage-show">
-                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px"/>
-                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px"/>
-                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px"/>
-                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px"/>
-                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px"/>
-                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px"/>
+                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px" />
+                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px" />
+                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px" />
+                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px" />
+                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px" />
+                <img src="../img/sj-img/sing1.jpg" width="140px" height="140px" />
             </div>
         </div>
-    </div>  
+    </div>
 </body>
 <script>
-/*     $("li").mouseenter(function(){
+    /*     $("li").mouseenter(function(){
         $(this).find("a").css({
             "color":"white",  
             // "background": "url(../img/images/b2_03.jpg) no-repeat",
@@ -104,12 +113,13 @@
     $(".li1").click(function(){
         location.href="login-T.html";
     }) */
-//我的页面联动
-    $(".dropdown").mouseenter(function(){
+    //我的页面联动
+    $(".dropdown").mouseenter(function () {
         $(".dropdown-menu").show();
     })
-    $(".dropdown-menu").mouseleave(function(){
+    $(".dropdown-menu").mouseleave(function () {
         $(".dropdown-menu").hide();
     })
 </script>
+
 </html>

@@ -39,12 +39,12 @@ function play(index, flag) { //播放：index - 播放序列，flag - 是否暂�
     setCookie("playIndex", playIndex);
     console.log(playIndex, playList, playList[playIndex]);
     $.ajax({
-        url: "http://10.36.133.110:3000/song/url",
+        url: "http://127.0.0.1:3000/song/url",
         data: "id=" + playList[playIndex].id,
         type: "get",
         dataType: "json",
         success: function (res) {
-            let obj = res.data;//优先进行播放
+            let obj = res.data; //优先进行播放
             if (obj[0].url == null) {
                 layer.msg("URL无效或暂无版权", {
                     icon: 2

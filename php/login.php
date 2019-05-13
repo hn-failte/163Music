@@ -31,7 +31,7 @@ else if($action=="l") { // 登录
 else die();
 
 function connect(){
-    mysql_connect("10.36.133.110", "madmin", '163music');
+    mysql_connect("127.0.0.1", "madmin", '163music');
     mysql_query("use 163music");
 }
 
@@ -57,4 +57,3 @@ function register($u_name,$u_pwd){
     }
     else echo json_encode(["state" => 0]);
 }
-?>

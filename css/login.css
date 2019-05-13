@@ -1,166 +1,191 @@
-#plane{
-    position:relative;
+#plane {
+    position: relative;
 }
-.log-nav{
-    margin:0 auto;
-    width:980px;
-    height:278px;
+
+.log-nav {
+    margin: 0 auto;
+    width: 980px;
+    height: 278px;
     background: #fff url("../img/image01.png") no-repeat center top;
-    overflow:hidden;
-    position:relative;
+    overflow: hidden;
+    position: relative;
 }
-.log-button{
-    width:168px;
-    height:45px;
-    position:absolute;
-    margin-top:202px;
-    margin-left:568px;
-    background-color:transparent;
+
+.log-button {
+    width: 168px;
+    height: 45px;
+    position: absolute;
+    margin-top: 202px;
+    margin-left: 568px;
+    background-color: transparent;
 }
-.popover{
-    width:530px;
-    height:325px;
-    background:yellow;
+
+.popover {
+    width: 530px;
+    height: 325px;
+    background: yellow;
     position: fixed;
-    top:157px;
-    left:142px;
-    display:none;
+    top: 157px;
+    left: 142px;
+    display: none;
 }
-.popover-head{
-    width:530px;
-    height:40px;
-    margin-top:0px;
-    background:#555555;
+
+.popover-head {
+    width: 530px;
+    height: 40px;
+    margin-top: 0px;
+    background: #555555;
 }
-.popover-head-login{
+
+.popover-head-login {
     width: 100px;
-    height:40px;
-    margin-left:50px;
-    float:left;
-    font-size:16px;
-    color:#fff;
+    height: 40px;
+    margin-left: 50px;
+    float: left;
+    font-size: 16px;
+    color: #fff;
     line-height: 40px;
 }
-.popover-head-button{
+
+.popover-head-button {
     width: 20px;
-    height:20px;
-    margin-left:320px;
-    margin-top:10px;
-    float:left;
-/*     font-size:16px;
+    height: 20px;
+    margin-left: 320px;
+    margin-top: 10px;
+    float: left;
+    /*     font-size:16px;
     color:#fff; */
     /* line-height: 40px; */
 }
-.popover-body{
-    width:530px;
-    height:240px;
-    background:pink;
-    margin-top:0px;
+
+.popover-body {
+    width: 530px;
+    height: 240px;
+    background: pink;
+    margin-top: 0px;
     border-bottom: #555555 1px solid;
 }
-.popover-body-left{
-    width:300px;
-    height:205px;
-    margin-top:40px;
-    background:orange url("../img/image02.png") no-repeat center top;
-    float:left;
+
+.popover-body-left {
+    width: 300px;
+    height: 205px;
+    margin-top: 40px;
+    background: orange url("../img/image02.png") no-repeat center top;
+    float: left;
 }
-.popover-body-right{
-    width:187px;
-    height:220px;
-    margin-top:40px;
-    background:cyan;
-    float:left;
+
+.popover-body-right {
+    width: 187px;
+    height: 220px;
+    margin-top: 40px;
+    background: cyan;
+    float: left;
 }
-.popover-body-btn1{
-    width:224px;
-    height:31px;
-    margin-top:130px;
-    margin-left:35px;
+
+.popover-body-btn1 {
+    width: 224px;
+    height: 31px;
+    margin-top: 130px;
+    margin-left: 35px;
 }
-.popover-body-btn2{
-    width:224px;
-    height:31px;
-    margin-top:10px;
-    margin-left:35px;
+
+.popover-body-btn2 {
+    width: 224px;
+    height: 31px;
+    margin-top: 10px;
+    margin-left: 35px;
 }
-.popover-right-ul{
-    margin-left:40px;
+
+.popover-right-ul {
+    margin-left: 40px;
 }
-.popover-right-ul li{
-    margin-top:5px;
-    width:148px;
-    height:40px;
-    line-height:40px;
+
+.popover-right-ul li {
+    margin-top: 5px;
+    width: 148px;
+    height: 40px;
+    line-height: 40px;
 }
-.popover-body-main{
-    width:230px;
-    height:240px;
-    background:cyan;
-    margin:0 auto;
+
+.popover-body-main {
+    width: 230px;
+    height: 240px;
+    background: cyan;
+    margin: 0 auto;
 }
-.popover-body-main ul{
-    margin-left:20px;
+
+.popover-body-main ul {
+    margin-left: 20px;
     display: block;
     float: left;
     background: blue;
 }
-.popover-body-main ul li{
-    width:200px;
-    height:60px;
-    margin-top:10px;
-    background:red;
+
+.popover-body-main ul li {
+    width: 200px;
+    height: 60px;
+    margin-top: 10px;
+    background: red;
 }
-.popover-body-input{
-    width:200px;
-    height:30px;
+
+.popover-body-input {
+    width: 200px;
+    height: 30px;
 }
-.popover-body-input3{
-    width:200px;
-    height:40px;
+
+.popover-body-input3 {
+    width: 200px;
+    height: 40px;
     background: blue;
 }
-.popover-body-auto1{
-    float:left;
-    margin-left:10px;
-    margin-top:10px;
+
+.popover-body-auto1 {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
 }
-.popover-body-auto2{
-    float:left;
-    margin-left:85px;
-    margin-top:10px;
+
+.popover-body-auto2 {
+    float: left;
+    margin-left: 85px;
+    margin-top: 10px;
 }
-.popover-foot{
-    line-height:40px;
-    margin-left:30px;
+
+.popover-foot {
+    line-height: 40px;
+    margin-left: 30px;
 }
-.popover-foot span{
-    line-height:40px;
-    margin-left:280px;
+
+.popover-foot span {
+    line-height: 40px;
+    margin-left: 280px;
 }
-.popover-body-verify{
-    width:200px;
-    height:30px;
-    margin-top:15px;
-    margin-left: 20px; 
-    line-height:30px;
+
+.popover-body-verify {
+    width: 200px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 20px;
+    line-height: 30px;
     float: left;
     text-align: center;
 }
-.popover-name{
-    width:530px;
-    height:280px;
-    background:yellow;
+
+.popover-name {
+    width: 530px;
+    height: 280px;
+    background: yellow;
     position: fixed;
-    top:157px;
-    left:142px;
-    display:none;
+    top: 157px;
+    left: 142px;
+    display: none;
 }
-.log-nav1{
-    margin:0 auto;
-    width:980px;
-    height:620px;
-    overflow:hidden;
-    position:relative;
-    background:orange;
+
+.log-nav1 {
+    margin: 0 auto;
+    width: 980px;
+    height: 620px;
+    overflow: hidden;
+    position: relative;
+    background: orange;
 }

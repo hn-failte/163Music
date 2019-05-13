@@ -1,16 +1,16 @@
 <?php
-if(isset($_GET["content"])){
+if (isset($_GET["content"])) {
     $content = $_GET["content"];
     echo "<script>var content = '$content';</script>";
-}
-else{
-    echo "<script>location.href='http://10.36.133.110:8086/html/music_search.html'</script>";
+} else {
+    echo "<script>location.href='http://127.0.0.1:8086/html/music_search.html'</script>";
     die();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,7 @@ else{
     <script src="../lib/layer/layer.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
         <div class="page-header text-center">
@@ -47,4 +48,5 @@ else{
     $("#input").val(content);
     $("#search").click();
 </script>
+
 </html>

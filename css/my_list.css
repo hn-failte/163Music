@@ -1,323 +1,123 @@
- @charset "utf-8"; 
-.head{
-    height: 91px;
-    background-color: #252525;
-}
-.head .nav{
-    height: 91px;
-}
-.head .nav .div1{
-    height: 91px;  
-    line-height: 91px;
-    width: 280px;
-    float: left;
-}
-.head .nav .div1 img{
-    margin-left: 55px;
-}
-.head .nav .div2{
-    width: 540px;
-    height: 91px;
-    float: left;
-}
-.head .nav .div2 ul li{
-    float: left;
-    list-style: none;
-    line-height: 91px;
-}
-.head .nav .div2 ul li a{
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.head .nav .div2 ul li a:hover{
-    background-color: black;
-}
-.head .nav .div3{
-    float: left;
-    height: 91px;
-    width: 360px;
-    position: relative;
-}
-.head .nav .div3 .text{
-    height: 30px;
-    margin-top: 35px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-}
-.head .nav .div3 .czzzx{
-    border-radius: 20px;
-    border: 1px solid #515151;
-    width: 90px;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    position: absolute;
-    left: 200px;
-    top: 39px;
-    color: white;   
-}
-.head .nav .div3 .dropdown{
-    position: absolute;
-    left: 300px;
-    top: 34px;
-    border: none;
-}
-.head .nav .div3 .dropdown .btn{
-    background-color: #252525;
-    border: none;
-    color: gray;
-    outline: none;
-}
-.head .nav .div3 img{
-    position: absolute;
-    top: 40px;
-    left: 10px;
-}
-.head .nav .div3 .dropdown-menu{
-    width: 50px;
-}
-.head .nav .div3 .dropdown ul{
-    background-color: #2D2D2D;
-}
-.head .nav .div3 .dropdown ul li a{
-    color: white;
-}
-/* .head .nav .div3 .dropdown ul .li1{
-    background: url(../img/images/b2_03.jpg) no-repeat;
-    background-size: 20px 25px;
-}
-.head .nav .div3 .dropdown ul .li2{
-    background: url(../img/images/b2_07.jpg) no-repeat;
-    background-size: 20px 25px;
-}
-.head .nav .div3 .dropdown ul .li3{
-    background: url(../img/images/b2_10.jpg) no-repeat;
-    background-size: 20px 25px;
-}
-.head .nav .div3 .dropdown ul .li4{
-    background: url(../img/images/b2_14.jpg) no-repeat;
-    background-size: 20px 25px;
-}
-.head .nav .div3 .dropdown ul .li5{
-    background: url(../img/images/b2_18.jpg) no-repeat;
-    background-size: 20px 25px;
-}  */
+@charset "utf-8";
 
+#main {
+    table-layout: fixed;
+}
 
-.di{
-    height: 67px;
-    background: #333;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+.half-left {
+    width: 30%;
 }
-.player{
-    height: 67px;
+
+.half-right {
+    width: 70%;
 }
-ul{
-    list-style-type: none;
-} 
-.muisc-list{
-    width:240px;
-    background:#eeeeee;
+
+.half-right img {
     float: left;
-    border-right:2px solid #ccc;
+    margin: 20px;
+    height: 120px;
+    width: 120px;
 }
-/* .muisc-list>ul {
-    height:500px;
-    overflow-y: auto;
-    border-top: #333 1px solid;
+
+.half-right>div {
+    float: left;
 }
-.muisc-list>ul li{
-     cursor: pointer;
+
+.half-right>div>h2>span {
     font-size: 16px;
-    user-select:none; 
-    width:150px;
-    min-height:30px; 
-    margin-top:10px;
+    cursor: pointer;
 }
 
-.muisc-list>ul li ul{
-    margin: 2px 0px;
-    padding: 0;
-    border: #ccc 1px solid;
-}
-.muisc-list>ul li ul li{
-    margin: 0;
+#btn,
+.half-right>div>p {
     font-size: 12px;
-    text-indent: 16px;
-}  */
-.mypage{
-    width:982px;
-    height: 810px;
-    margin:0 auto;
-    background:#ffffff;
 }
-.mywon-list{
-    height:200px;
-    position: relative;
-    border-bottom: 2px solid red;
-}
-.myown{
-    height: 50px;
-    left:50px;
-    bottom: 0px;
-    position: absolute;
-}
-.text-primary{
-    height:400px;
-    overflow-y:auto;
-    overflow-x:hidden;
-    background:#eeeeee;
-    border-bottom:1px dashed #ccc;
-}
-/* ----------------------------------------------------------- */
-.my-li{
-    list-style-type: none;
-    width:200px;
-    height:40px;
-    background:#ffffff;
-    margin:10px auto;
-}
-.myli-img{
-    margin:5px;
-    width:30px;
-    height:30px;
-    float:left;
-}
-.my-li p{
-    font-size:12px;
-    line-height: 16px;
-}
-.my-li span{
-    font-size:14px;
-    line-height:10px;
-}
-.music-data{
-    width:740px;
-    float: left;
-}
-.data-img{
-    width:240px;
-    height:200px;
-    background:#eeeeee;
-    position: relative;
-    float: left;
-    border-bottom: 1px dashed #333;
-}
-.data-img img{
-    position: absolute;
-    left:100px;
-    top:42px;
-}
-.data-text{
-    width:500px;
-    height:200px;
-    float: left;
-    background:#eeeeee;
-    border-bottom: 1px dashed #333;
-    padding-top:40px;
-    text-indent: 2em;
-    position: relative;
-}
-.data-text span{
-    font-size:28px;
 
+.left-ul {
+    list-style: none;
+    padding: 0;
 }
-.data-text a{
-    border:1px solid #bbbbbb;
-    font-size:16px;
-    margin-left:10px;
-    display: inline;
-    background:#eeeeee;
-}
-.data-text span a{
-    left:400px;
-    font-size:14px;
-    position: absolute;
-    text-indent:0em;
-}
-.data-list{
-    width:740px;
-    height:400px;
+
+.left-ul li {
+    width: 100%;
     float: left;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
-.data-list>ul{
-    width:700px;
-    height:380px;
-    min-height: 100px;
-    overflow-y: auto;
-    overflow-x: hidden;
+
+.list-pic {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background: url(../img/images/c_06.jpg);
+    background-size: contain;
 }
-.data-list>ul li{
-    width: 700px;
+
+.list-content {
+    float: left;
+    height: 40px;
+    margin: 5px 0;
+}
+
+.list-content:hover {
+    cursor: pointer;
+}
+
+.list-content>p {
+    margin: 0;
+    height: 20px;
+    line-height: 12px;
+    font-size: 12px;
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#song-list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#song-list dt {
+    padding-left: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+}
+
+#song-list dd {
+    padding-left: 20px;
+    margin: 0;
+}
+
+#song-list dd p {
+    float: left;
     height: 30px;
-    margin-top:10px;
-    background:#eeeeee;
     line-height: 30px;
-    position: relative;
-    text-indent: 2em;
-}
-.data-list>ul li span{
-    width:100px;
-    height:30px;
-    position: absolute;
-    left:0px;
-    display: block;
-    border-right:1px solid #ccc;
-    background:#fff url("../img/table.png") no-repeat ;
-    background-position:60px -96px;
-}
-.data-list>ul li b{
-    width:250px;
-    height:30px;
-    position: absolute;
-    left:100px;
-    display: block;
-    border-right:1px solid #ccc;
-}
-.data-list>ul li i{
-    width:100px;
-    position: absolute;
-    left:350px;
-    display: block;
-    border-right:1px solid #ccc;
-}
-.data-list>ul li em{
-    width:100px;
-    position: absolute;
-    left:450px;
-    display: block;
-    border-right:1px solid #ccc;
-}
-.data-list>ul li div{
-    width:100px;
-    position: absolute;
-    left:550px;
-    display: block;
-}
-.data-div{
-    width:700px;
-    height:30px;
-    text-indent: 2em;
-    font-size:16px;
-    line-height: 30px;
-}
-.data-node{
-    width:980px;
-    height:200px;
-    text-indent: 2em;
-    font-size:16px;
-    line-height: 30px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-top: 2px solid red;
-    background:#eeeeee;
+    font-size: 12px;
 }
 
+#song-list dd p.operation {
+    width: 100px;
+}
+
+#song-list dd p.operation span {
+    cursor: pointer;
+}
+
+#song-list dd p.player {
+    text-align: center;
+    width: 300px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#song-list dd p.song-name {
+    text-align: center;
+    float: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

@@ -1,43 +1,42 @@
-[
-    {
-        "src" : "../img/sj-img/tui1.jpg",
-        "count" : "121万",
-        "content" : "每天都很晚睡的你，在想些什么？"
+[{
+        "src": "../img/sj-img/tui1.jpg",
+        "count": "121万",
+        "content": "每天都很晚睡的你，在想些什么？"
     },
     {
-        "src" : "../img/sj-img/tui2.jpg",
-        "count" : "30万",
-        "content" : "每个人心中都有座世外桃源"
+        "src": "../img/sj-img/tui2.jpg",
+        "count": "30万",
+        "content": "每个人心中都有座世外桃源"
     },
     {
-        "src" : "../img/sj-img/tui3.jpg",
-        "count" : "200万",
-        "content" : "枪花涅槃绿洲蝎子绿日电司山羊皮ACDC摇滚"
+        "src": "../img/sj-img/tui3.jpg",
+        "count": "200万",
+        "content": "枪花涅槃绿洲蝎子绿日电司山羊皮ACDC摇滚"
     },
     {
-        "src" : "../img/sj-img/tui4.jpg",
-        "count" : "47万",
-        "content" : "白木本人电台 - 你总是替别人着想"
+        "src": "../img/sj-img/tui4.jpg",
+        "count": "47万",
+        "content": "白木本人电台 - 你总是替别人着想"
     },
     {
-        "src" : "../img/sj-img/tui5.jpg",
-        "count" : "77万",
-        "content" : "跑步中文歌～车载中文（2019加油）"
+        "src": "../img/sj-img/tui5.jpg",
+        "count": "77万",
+        "content": "跑步中文歌～车载中文（2019加油）"
     },
     {
-        "src" : "../img/sj-img/tui6.jpg",
-        "count" : "45万",
-        "content" : "你不知道“晚安”对我来说有多重要"
+        "src": "../img/sj-img/tui6.jpg",
+        "count": "45万",
+        "content": "你不知道“晚安”对我来说有多重要"
     },
     {
-        "src" : "../img/sj-img/tui7.jpg",
-        "count" : "77万",
-        "content" : "开车时听的音乐"
+        "src": "../img/sj-img/tui7.jpg",
+        "count": "77万",
+        "content": "开车时听的音乐"
     },
     {
-        "src" : "../img/sj-img/tui8.jpg",
-        "count" : "45万",
-        "content" : "暗恋是细碎失恋的开始"
+        "src": "../img/sj-img/tui8.jpg",
+        "count": "45万",
+        "content": "暗恋是细碎失恋的开始"
     }
-    
+
 ]
