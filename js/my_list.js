@@ -67,11 +67,10 @@ $("#btn").click(function () {
                 type: "get",
                 dataType: "json",
                 success: function (res) {
+                    getList(user);
                     if (res.state == 1) {
                         layer.msg("添加成功", {
                             icon: 1
-                        }, function () {
-                            getList(user);
                         });
                     } else {
                         layer.msg("添加失败", {
@@ -163,11 +162,9 @@ function editListName() { //编辑歌单名
                 dataType: "json",
                 success: function (res) {
                     if (res.state == 1) {
+                        getList(user);
                         layer.msg("修改成功", {
-                            icon: 1,
-                            time: 1000
-                        }, function () {
-                            getList(user);
+                            icon: 1
                         });
                     } else {
                         layer.msg("修改失败", {
@@ -197,11 +194,9 @@ function deleteSong(i) {
             dataType: "json",
             success: function (res) {
                 if (res.state == 1) {
+                    listExtend($(".left-ul>li"));
                     layer.msg("删除成功", {
-                        icon: 1,
-                        time: 1000
-                    }, function () {
-                        listExtend($(".left-ul>li"));
+                        icon: 1
                     });
                 } else {
                     layer.msg("删除失败", {
