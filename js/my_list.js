@@ -138,7 +138,7 @@ function doDownload(i) { //下载
         type: "get",
         dataType: "json",
         success: function (res) {
-            download(res.data[0].url, playList[i].artists + " - " + playList[i].name, "audio/mp3");
+            saveAs(res.data[0].url, playList[i].artists + " - " + playList[i].name + ".mp3");
         }
     });
 }

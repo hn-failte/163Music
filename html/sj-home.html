@@ -2,72 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>网易云音乐</title>
-    <link rel="stylesheet" href="../css/sj-home.css">
+    <link rel="stylesheet" href="../css/sj-home.css" />
     <script src="../lib/jquery.js"></script>
-
-    <!-- <link href="../css/frame.css" rel="stylesheet" /> -->
-    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
-    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../css/my_list.css">
-    <link rel="stylesheet" href="../css/music_bar.css">
-    <script src="../lib/layer/layer.js"></script>
+    <link rel="stylesheet" href="../css/basic.css" />
 </head>
 
 <body>
-
-    <!-- 返回顶部 -->
-    <div class="backTop"></div>
-    <!-- 导航栏 -->
-    <div class="navBox">
-        <div class="navIn">
-            <em>推荐</em>
-            <em>排行榜</em>
-            <em>歌单</em>
-            <em>主播电台</em>
-            <em>歌手</em>
-            <em>新碟上架</em>
-        </div>
-    </div>
-    <!-- 轮播图 -->
-    <div class="swiperBox">
-
-        <div class="swiper">
-            <div class="swiperLi">
-                <div class="box">
-                    <ul class="imageBox">
-                        <li class="lil"><img src="../img/sj-img/swiper1.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper2.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper3.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper4.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper5.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper6.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper7.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper8.jpg" alt=""></li>
-                        <li class="lil"><img src="../img/sj-img/swiper9.jpg" alt=""></li>
-                    </ul>
-                    <ol class="tipsBox">
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                        <p class="pl"></p>
-                    </ol>
-                </div>
-                <div class="download"></div>
-                <span class="leftBtn"></span>
-                <span class="rightBtn"></span>
-            </div>
-        </div>
-
-    </div>
     <!-- 内容 -->
     <div class="con">
         <div class="content clear-fix">
@@ -78,193 +21,14 @@
                         <a href="#" class="remen">热门推荐</a>
                         <div class="tab">
                             <a href="#">华语</a>
-                            <span class="leg"> | </span>
-                            <a href="#">流行</a>
-                            <span class="leg"> | </span>
-                            <a href="#">摇滚</a>
-                            <span class="leg"> | </span>
-                            <a href="#">民谣</a>
-                            <span class="leg"> | </span>
-                            <a href="#">电子</a>
-                        </div>
-                        <div class="nore">
-                            <a href="#">更多</a>
                         </div>
                     </h2>
                     <div class="ajaxDoc clear-fix"></div>
                 </div>
-                <!-- 个性化推荐 -->
-                <div class="leftPer">
-                    <h2>
-                        <a href="#" class="remen">个性化推荐</a>
-                        <div class="nore">
-                            <a href="#">更多</a>
-                        </div>
-                    </h2>
-                    <div class="reco clear-fix">
-                        <div class="reco1 recoDay">
-                            <div class="today">
-                                <span class="todayWeek"></span>
-                                <span class="todayDay"></span>
-                            </div>
-                            <span class="reco1_a">每日歌曲推荐</span>
-                            <span class="reco1_b">根据你的口味生成,每天6:00更新</span>
-                        </div>
-                        <div class="reco2"></div>
-                    </div>
-                </div>
-                <!-- 新碟上架 -->
-                <div class="leftNewd">
-                    <h2>
-                        <a href="#" class="remen">新碟上架</a>
-                        <div class="nore">
-                            <a href="#">更多</a>
-                        </div>
-                    </h2>
-                    <div class="newSing clear-fix"></div>
-                </div>
-                <!-- 榜单 -->
-                <div class="leftList">
-                    <h2>
-                        <a href="#" class="remen">榜单</a>
-                        <div class="nore">
-                            <a href="#">更多</a>
-                        </div>
-                    </h2>
-                    <div class="ranking">
-                        <!-- left -->
-                        <div class="rankLeft">
-                            <dl>
-                                <img class="dlLeft" src="../img/sj-img/sing1.jpg" alt="">
-                                <div class="dlRight">
-                                    <div class="pj">云音乐飙升榜</div>
-                                    <div class="konf">
-                                        <u class="u1"></u>
-                                        <u class="u2"></u>
-                                    </div>
-                                </div>
-                            </dl>
-                            <div class="rankDoc"></div>
-                            <div class="look1 look">查看全部</div>
-                        </div>
-                        <!-- center -->
-                        <div class="rankCenter">
-                            <dl>
-                                <img src="../img/sj-img/sing2.jpg" alt="">
-                                <div class="dlRight">
-                                    <div class="pj">云音乐新歌榜</div>
-                                    <div class="konf">
-                                        <u class="u1"></u>
-                                        <u class="u2"></u>
-                                    </div>
-                                </div>
-                            </dl>
-                            <div class="rankDoc2"></div>
-                            <div class="look2 look">查看全部</div>
-                        </div>
-                        <!-- right -->
-                        <div class="rankRight">
-                            <dl>
-                                <img src="../img/sj-img/sing3.jpg" alt="">
-                                <div class="dlRight">
-                                    <div class="pj">网易原创歌曲榜</div>
-                                    <div class="konf">
-                                        <u class="u1"></u>
-                                        <u class="u2"></u>
-                                    </div>
-                                </div>
-                            </dl>
-                            <div class="rankDoc3"></div>
-                            <div class="look3 look">查看全部</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 右块内容 -->
-            <div class="conRight">
-                <!-- 用户信息 -->
-                <div class="youSelf">
-                    <img class="miImg" src="../img/sj-img/mi.jpg" alt="">
-                </div>
-                <!-- 歌手列表 -->
-                <div class="singer">
-                    <h3 class="singMore">
-                        <span class="sing1">入驻歌手</span>
-                        <span class="sing3"></span>
-                        <a href="#" class="sing2">查看全部</a>
-                    </h3>
-                    <div class="pub"></div>
-                    <div class="singBtn">申请成为音乐人</div>
-                </div>
-                <!-- 主播列表 -->
-                <div class="ancho">
-                    <h3 class="anchoMore">热门主播</h3>
-                    <div class="anchoData"></div>
-                </div>
             </div>
         </div>
     </div>
-    <!-- 尾部 -->
-    <div class="tail">
-        <div class="tailDoc">
-            <div class="tailLeft">
-                <p class="tailp tai">
-                    <a href="#">关于网易</a>
-                    <span> | </span>
-                    <a href="#">客户服务</a>
-                    <span> | </span>
-                    <a href="#">服务条款</a>
-                    <span> | </span>
-                    <a href="#">隐私政策</a>
-                    <span> | </span>
-                    <a href="#">版权投诉指引</a>
-                    <span> | </span>
-                    <a href="#">意见反馈</a>
-                    <span> | </span>
-                </p>
-                <p class="tailp2 tai">
-                    <span>网易公司版权所有©1997-2019</span>
-                    <span>杭州乐读科技有限公司运营：</span>
-                    <a href="#">浙网文[2018]3506-263号</a>
-                </p>
-                <p class="tailp3 tai">
-                    <span>违法和不良信息举报电话：0571-89853516</span>
-                    <span>举报邮箱：</span>
-                    <a href="#">ncm5990@163.com</a>
-                </p>
-            </div>
-            <div class="tailRight">
-                <div class="tu tu1">
-                    <h4 class="tuTop"></h4>
-                    <h4 class="tuBot">用户认证</h4>
-                </div>
-                <div class="tu tu2">
-                    <h4 class="tuTop"></h4>
-                    <h4 class="tuBot">独立音乐人</h4>
-                </div>
-                <div class="tu tu3">
-                    <h4 class="tuTop"></h4>
-                    <h4 class="tuBot">赞赏</h4>
-                </div>
-                <div class="tu tu4">
-                    <h4 class="tuTop"></h4>
-                    <h4 class="tuBot">视频奖励</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 </body>
-<script src="../js/sj-move1.1.0.js"></script>
-<script src="../js/sj-animate7.0.js"></script>
-<script src="../js/sj-swiper.js"></script>
 <script src="../js/sj-home.js"></script>
 <script src="../js/sj-getdata.js"></script>
-<script>
-    swiper.init();
-</script>
-
-
 </html>
